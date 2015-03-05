@@ -1,0 +1,26 @@
+{
+  "name": "getaway-widgets.js",
+  "authors": [
+    "Colin Stannard <colin.stannard@get-away.com>"
+  ],
+  "description": "Widgets for use with get-away.com (travel provider)",
+  "main": "dist/widgets.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "get-away",
+    "GetAway",
+    "Get Away",
+    "Travel"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/get-away/js-widgets.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

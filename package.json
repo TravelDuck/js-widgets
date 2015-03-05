@@ -1,0 +1,34 @@
+{
+  "name": "getaway-widgets.js",
+  "authors": [
+    "Colin Stannard <colin.stannard@get-away.com>"
+  ],
+  "description": "Widgets for use with get-away.com (travel provider)",
+  "main": "dist/widgets.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "get-away",
+    "GetAway",
+    "Get Away",
+    "Travel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/get-away/js-widgets.js.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/get-away/js-widgets.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13"
+  }
+}
