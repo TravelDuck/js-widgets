@@ -1,0 +1,342 @@
+/*
+ * Available to ....
+ */
+.ga-datepicker td.day.available-to-available,
+.ga-datepicker td.day.available-to-available.disabled:hover,
+.ga-availability .day.available-to-available {
+  background: #A4D61E;
+}
+
+.ga-datepicker td.day.available-to-unavailable,
+.ga-datepicker td.day.available-to-unavailable.disabled:hover,
+.ga-availability .day.available-to-unavailable {
+  background: #A4D61E;
+  background: -moz-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #A4D61E), color-stop(50%, #A4D61E), color-stop(51%, #C65A5A), color-stop(100%, #C65A5A));
+  background: -webkit-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
+  background: -o-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
+  background: -ms-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
+  background: linear-gradient(135deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4D61E', endColorstr='#C65A5A', GradientType=1);
+}
+
+.ga-datepicker td.day.available-to-unknown,
+.ga-datepicker td.day.available-to-unknown.disabled:hover,
+.ga-availability .day.available-to-unknown {
+  background: #A4D61E;
+  background: -moz-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #A4D61E), color-stop(50%, #A4D61E), color-stop(51%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
+  background: -webkit-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: -o-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: -ms-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: linear-gradient(135deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4D61E', endColorstr='#eeeeee', GradientType=1);
+}
+
+/*
+ * Unavailable to ....
+ */
+.ga-datepicker td.day.unavailable-to-available,
+.ga-datepicker td.day.unavailable-to-available.disabled:hover,
+.ga-availability .day.unavailable-to-available {
+  background: #A4D61E;
+  background: -moz-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #C65A5A), color-stop(49%, #C65A5A), color-stop(50%, #A4D61E), color-stop(100%, #A4D61E));
+  background: -webkit-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
+  background: -o-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
+  background: -ms-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
+  background: linear-gradient(135deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C65A5A', endColorstr='#A4D61E', GradientType=1);
+}
+
+
+.ga-datepicker td.day.unavailable-to-unavailable,
+.ga-datepicker td.day.unavailable-to-unavailable.disabled:hover,
+.ga-availability .day.unavailable-to-unavailable {
+  background: #C65A5A;
+}
+
+.ga-datepicker td.day.unavailable-to-unknown,
+.ga-datepicker td.day.unavailable-to-unknown.disabled:hover,
+.ga-availability .day.unavailable-to-unknown {
+  background: #C65A5A;
+  background: -moz-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #C65A5A), color-stop(50%, #C65A5A), color-stop(51%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
+  background: -webkit-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: -o-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: -ms-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  background: linear-gradient(135deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C65A5A', endColorstr='#ffffff', GradientType=1);
+
+}
+
+
+
+/*
+ * Unknown to ....
+ */
+.ga-datepicker td.day.unknown-to-available,
+.ga-datepicker td.day.unknown-to-available.disabled:hover,
+.ga-availability .day.unknown-to-available {
+  background: #A4D61E;
+  background: -moz-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(49%, rgba(238, 238, 238, 1)), color-stop(50%, #A4D61E), color-stop(100%, #A4D61E));
+  background: -webkit-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
+  background: -o-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
+  background: -ms-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
+  background: linear-gradient(135deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b6efa1', GradientType=1);
+}
+
+.ga-datepicker td.day.unknown-to-unavailable,
+.ga-datepicker td.day.unknown-to-unavailable.disabled:hover,
+.ga-availability .day.unknown-to-unavailable {
+  background: #C65A5A;
+  background: -moz-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(49%, rgba(238, 238, 238, 1)), color-stop(50%, #C65A5A), color-stop(100%, #C65A5A));
+  background: -webkit-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
+  background: -o-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
+  background: -ms-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
+  background: linear-gradient(135deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#C65A5A', GradientType=1);
+}
+
+.ga-datepicker td.day.unknown-to-unknown,
+.ga-datepicker td.day.unknown-to-unknown.disabled:hover,
+.ga-availability .day.unknown-to-unknown {
+  background: #eee;
+}
+
+
+
+.ga-datepicker {
+  top: 0;
+  left: 0;
+  padding: 4px;
+  margin-top: 1px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  /*.dow {
+    border-top: 1px solid #ddd !important;
+  }*/
+
+}
+.ga-datepicker:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 6px;
+}
+.ga-datepicker:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  position: absolute;
+  top: -6px;
+  left: 7px;
+}
+.ga-datepicker > div {
+  display: none;
+}
+.ga-datepicker table {
+  width: 100%;
+  margin: 0;
+  border-spacing:0;
+}
+.ga-datepicker td,
+.ga-datepicker th {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.ga-datepicker th.switch {
+  width: 145px;
+}
+.ga-datepicker th.next,
+.ga-datepicker th.prev {
+  font-size: 21px;
+}
+.ga-datepicker thead tr:first-child th {
+  cursor: pointer;
+}
+.ga-datepicker thead tr:first-child th:hover {
+  background: #eeeeee;
+}
+
+
+
+.ga-datepicker {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ga-datepicker td.day.disabled {
+  text-decoration:line-through;
+  cursor: not-allowed;
+}
+
+.ga-datepicker td.day {
+  cursor: pointer;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width:32px !important;
+  height:32px !important;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+
+@media(max-width:768px) {
+  .ga-datepicker td.day {
+    width:28px !important;
+    height:28px !important;
+    padding:3px !important;
+  }
+}
+
+
+
+
+.ga-datepicker td.day.new,
+.ga-datepicker td.day.old {
+  opacity: 0.6;
+}
+
+.ga-datepicker td.day.start-date,
+.ga-datepicker td.day.end-date {
+  width: 30px;
+  height: 31px;
+  background: #0098FE !important;
+  color: #fff;
+  position: relative;
+  text-decoration: none !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.ga-datepicker td.day.selected-date {
+  background-color: #ccc !important;
+}
+
+.ga-datepicker td.day.start-date:after,
+.ga-datepicker td.day.start-date:before,
+.ga-datepicker td.day.end-date:after,
+.ga-datepicker td.day.end-date:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.ga-datepicker td.day.start-date:after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 16px 8px;
+  border-color: transparent transparent #ccc transparent;
+}
+
+.ga-datepicker td.day.start-date:before {
+  top: 0;
+  right: 0;
+  border-width: 0 8px 16px 0;
+  border-color: transparent #ccc transparent transparent;
+}
+
+.ga-datepicker td.day.end-date:after {
+  top: 0;
+  left: 0;
+  border-width: 16px 8px 0 0;
+  border-color: #ccc transparent transparent transparent;
+}
+
+.ga-datepicker td.day.end-date:before {
+  bottom: 0;
+  left: 0;
+  border-width: 16px 0 0 8px;
+  border-color: transparent transparent transparent #ccc;
+}
+
+
+
+
+.ga-datepicker.dropdown-menu {
+  position:absolute;
+  top:100%;
+  left:0;
+  z-index:2000;
+  display:none;
+  float:left;
+  min-width:160px;
+  padding:5px 0;
+  margin:2px 0 0;
+  list-style:none;
+  font-size:14px;
+  background-color:#fff;
+  border:1px solid #ccc;
+  border:1px solid rgba(0,0,0,.15);
+  border-radius:4px;
+  -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
+  box-shadow:0 6px 12px rgba(0,0,0,.175);
+  background-clip:padding-box
+}
+.ga-datepicker.dropdown-menu.pull-right {
+  right:0;left:auto
+}
+.ga-datepicker.dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}
+.ga-datepicker.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#333;white-space:nowrap}
+.ga-datepicker.dropdown-menu>li>a:hover,
+.ga-datepicker.dropdown-menu>li>a:focus {
+  text-decoration:none;color:#262626;background-color:#f5f5f5
+}
+.ga-datepicker.dropdown-menu>.active>a,
+.ga-datepicker.dropdown-menu>.active>a:hover,
+.ga-datepicker.dropdown-menu>.active>a:focus{
+  color:#fff;text-decoration:none;outline:0;background-color:#428bca
+}
+.ga-datepicker.dropdown-menu>.disabled>a,
+.ga-datepicker.dropdown-menu>.disabled>a:hover,
+.ga-datepicker.dropdown-menu>.disabled>a:focus{
+  color:#999
+}
+
+.ga-datepicker.dropdown-menu>.disabled>a:hover,
+.ga-datepicker.dropdown-menu>.disabled>a:focus{
+  text-decoration:none;
+  background-color:transparent;background-image:none;
+  filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);cursor:not-allowed
+}
+
+
+
+.ga-datepicker.dropdown-menu-right{left:auto;right:0}
+
+.ga-datepicker.dropdown-menu-left{left:0;right:auto}
+
+.ga-datepicker.dropdown-header{display:block;padding:3px 20px;font-size:12px;line-height:1.428571429;color:#999}
+
+.ga-datepicker.dropdown-backdrop{position:fixed;left:0;right:0;bottom:0;top:0;z-index:1990}
+
+
+.ga-datepicker .dropup .caret {
+  border-top:0;
+  border-bottom:4px solid;
+  content:""
+}
+
+.ga-datepicker .dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu{
+  top:auto;
+  bottom:100%;
+  margin-bottom:1px
+}

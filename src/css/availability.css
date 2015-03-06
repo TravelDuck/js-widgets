@@ -1,0 +1,28 @@
+.ga-availability {
+
+}
+
+.ga-availability table {
+  width: 252px;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  float: left;
+  margin: 15px;
+}
+
+.ga-availability .month-name {
+  text-align: center;
+  height: 30px;
+}
+
+.ga-availability .day-of-week-name {
+  text-align: center;
+  height: 30px;
+}
+
+.ga-availability .day {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+}
