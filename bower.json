@@ -1,5 +1,5 @@
 {
-  "name": "getaway-widgets.js",
+  "name": "getaway-widgets",
   "authors": [
     "Colin Stannard <colin.stannard@get-away.com>"
   ],
@@ -15,7 +15,7 @@
     "Travel"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/get-away/js-widgets.js",
+  "homepage": "https://github.com/get-away/js-widgets",
   "ignore": [
     "**/.*",
     "node_modules",
