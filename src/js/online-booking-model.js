@@ -204,10 +204,7 @@
       var calendarDayRange = new CalendarDayRange(startCalendarDay, endCalendarDay);
       var request = new GetAway_Property_Booking_Request(property(), calendarDayRange);
       request.submit(function(response) {
-
-        var bookingIdentifier = btoa(response["id"] + "-" + response["access-token"]);
-        window.location.href = "https://get-away.com/booking/" + bookingIdentifier;
-
+        window.location.href = response["url"];
       });
     });
   }
