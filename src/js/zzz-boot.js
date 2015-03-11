@@ -1,8 +1,8 @@
 $(function() {
-  $(".ga-availability").each(function() {
-    $(this).gaAvailabilityWidget();
+  $(".gaAvailability").each(function() {
+    $(this).gaAvailability();
   });
-  $(".ga-onlineBookingModal").each(function() {
-    $(this).gaOnlineBookingModalWidget();
+  $(".gaOnlineBookingModal").each(function() {
+    $(this).gaOnlineBookingModal();
   });
 });

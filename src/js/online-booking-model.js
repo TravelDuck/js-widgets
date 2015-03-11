@@ -80,7 +80,7 @@
    * @param methodOrOptions
    * @returns {*}
    */
-  $.fn.gaOnlineBookingModalWidget = function(methodOrOptions) {
+  $.fn.gaOnlineBookingModal = function(methodOrOptions) {
 
     if(methods[methodOrOptions]) {
       return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
@@ -215,7 +215,7 @@
    * Setup the date pickers.
    */
   function setupDatePickers() {
-    var checkin = $(startDateInput).bbDatepicker({
+    var checkin = $(startDateInput).gaDatePicker({
       todayBtn: true,
       onRender: function(date) {
         var classes = [];
@@ -228,19 +228,19 @@
     }).on('changeDate', function(e) {
       setStartCalendarDay(e.date);
 
-      checkout.bbDatepicker("setValue", e.date);
+      checkout.gaDatePicker("setValue", e.date);
 
-      checkin.bbDatepicker("update");
-      checkout.bbDatepicker("update");
+      checkin.gaDatePicker("update");
+      checkout.gaDatePicker("update");
 
-      checkin.bbDatepicker("hide");
+      checkin.gaDatePicker("hide");
       checkout.focus();
 
       loadPrice();
     });
 
 
-    var checkout = $(endDateInput).bbDatepicker({
+    var checkout = $(endDateInput).gaDatePicker({
       onRender: function(date) {
         var classes = [];
 
@@ -252,10 +252,10 @@
     }).on('changeDate', function(e) {
       setEndCalendarDay(e.date);
 
-      checkin.bbDatepicker("update");
-      checkout.bbDatepicker("update");
+      checkin.gaDatePicker("update");
+      checkout.gaDatePicker("update");
 
-      checkout.bbDatepicker("hide");
+      checkout.gaDatePicker("hide");
 
       loadPrice();
     });
@@ -345,8 +345,8 @@
     afterStartCalendarDayLimit = null;
     beforeEndCalendarDayLimit = null;
 
-    $(startDateInput).val("").bbDatepicker("update");
-    $(endDateInput).val("").bbDatepicker("update");
+    $(startDateInput).val("").gaDatePicker("update");
+    $(endDateInput).val("").gaDatePicker("update");
 
     loadPrice();
   }

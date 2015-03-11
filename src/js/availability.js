@@ -11,23 +11,46 @@
       var currentMonth = CalendarMonth.currentMonth();
 
       settings = $.extend({
+
         startMonth: currentMonth.getMonth(),
         startYear: currentMonth.getYear(),
-        numberOfMonths: 12,
-        weekStart: 6
+
+        // By default display 12 months of calendars
+        numberOfMonthsToDisplay: 12,
+
+        //
+        // Day of the week is represented as an int where:
+        //   1 -> Monday
+        //   2 -> Tuesday
+        //   ...
+        //   7 -> Sunday
+        //
+        // Saturday (6) is the most common change over day,
+        // so we choose this as the default.
+        //
+        weekChangeOverDay: 6
+
       }, options);
+
+      // --- --- --- --- --- ---
 
       displayElement = this;
 
       mainContainer = document.createElement("div");
       displayElement.append(mainContainer);
 
+      // Hide calendars by default
       mainContainer.style.opacity = 0;
 
       draw();
       refreshAvailability();
 
-      // Auto refresh availability
+      //
+      // Auto refresh displayed availability.
+      //
+      // If property availability if updated, calendar
+      // colouring is updated on the displayed calendars.
+      //
       setInterval(function() {
         refreshAvailability();
       }, 30000);
@@ -43,29 +66,97 @@
    * @param methodOrOptions
    * @returns {*}
    */
-  $.fn.gaAvailabilityWidget = function(methodOrOptions) {
+  $.fn.gaAvailability = function(methodOrOptions) {
 
     if(methods[methodOrOptions]) {
       return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
     } else if(typeof methodOrOptions === "object" || !methodOrOptions) {
       return methods.init.apply( this, arguments );
     } else {
-      $.error("Method " +  methodOrOptions + " does not exist on jQuery.availabilityWidget");
+      $.error("Method " +  methodOrOptions + " does not exist on jQuery.gaAvailability");
     }
   };
 
+
+  /**
+   * Get the Property to display the availability of.
+   *
+   * @returns {GetAway_Property}
+   */
+  function property() {
+    return new GetAway_Property($(displayElement).data("property-id"));
+  }
+
+
+  /**
+   * Get the day of the week that each week should start with (The change over day).
+   *
+   * @returns {DayOfWeek}
+   */
+  function weekChangeOverDay() {
+    var changeOverDay = new DayOfWeek(settings.weekChangeOverDay);
+
+    // Read from data if available.
+    var dataWeekChangeOverDay = $(displayElement).data("week-change-over-day");
+    if(dataWeekChangeOverDay) {
+      changeOverDay = new DayOfWeek(dataWeekChangeOverDay)
+    }
+
+    return changeOverDay;
+  }
+
+
+  /**
+   * Get the number of months that should be displayed.
+   *
+   * @returns {number}
+   */
+  function numberOfMonthsToDisplay() {
+    var numberOfMonthsToDisplay = settings.numberOfMonthsToDisplay;
+
+    // Read from data if available.
+    var dataNumberOfMonthsToDisplay = $(displayElement).data("number-of-months-to-display");
+    if(dataNumberOfMonthsToDisplay) {
+      numberOfMonthsToDisplay = dataNumberOfMonthsToDisplay;
+    }
+
+    return numberOfMonthsToDisplay;
+  }
+
+
+  /**
+   * Get the first month that should be displayed.
+   *
+   * @returns {CalendarMonth}
+   */
   function startMonth() {
     return new CalendarMonth(settings.startYear, settings.startMonth);
   }
 
+
+  /**
+   * Get the last month that should be displayed.
+   *
+   * @returns {CalendarMonth}
+   */
   function endMonth() {
-    return startMonth().plusMonths(settings.numberOfMonths - 1);
+    return startMonth().plusMonths(numberOfMonthsToDisplay() - 1);
   }
 
+
+  /**
+   * Get the range of months to be displayed.
+   *
+   * @returns {CalendarMonthRange}
+   */
   function monthRange() {
     return new CalendarMonthRange(startMonth(), endMonth());
   }
 
+
+  /**
+   * Refresh the availability displayed.
+   */
   function refreshAvailability() {
 
     // Create new calendar month range for months to load availability for
@@ -85,7 +176,7 @@
       var unknownToUnavailable = availability.unknownToUnavailable;
       var unknownToUnknown = availability.unknownToUnknown;
 
-      $(".ga-availability .day").each(function() {
+      $(".gaAvailability .day").each(function() {
         $(this).removeClass("available-to-available available-to-unavailable available-to-unknown");
       });
 
@@ -180,11 +271,10 @@
     }, function() {});
   }
 
-  function property() {
-    return new GetAway_Property($(displayElement).data("property-id"));
-  }
 
-
+  /**
+   * Draw the calendars.
+   */
   function draw() {
     $(mainContainer).empty();
 
@@ -194,8 +284,15 @@
     }
   }
 
+
+  /**
+   * Add a month to the output.
+   *
+   * @param calendarMonth
+   */
   function addMonth(calendarMonth) {
 
+    var changeOverDay = weekChangeOverDay();
     var days = calendarMonth.days();
     var firstDay = days[0];
 
@@ -214,11 +311,10 @@
     /*
      * Days of the week names
      */
-    var dayOfWeek = new DayOfWeek(settings.weekStart);
     var html = '<tr>';
     for(var i = 0; i < 7; i++) {
-      html += '<td class="day-of-week-name">' + dayOfWeek.twoLetterName() + '</td>';
-      dayOfWeek = dayOfWeek.next();
+      html += '<td class="day-of-week-name">' + changeOverDay.twoLetterName() + '</td>';
+      changeOverDay = changeOverDay.next();
     }
     html += '</tr>';
     $(table).append(html);
@@ -227,7 +323,7 @@
     /*
      * Days of the month numbers
      */
-    var skip = ((firstDay.dayOfWeek().getNumber() + 7) - settings.weekStart) % 7;
+    var skip = ((firstDay.dayOfWeek().getNumber() + 7) - changeOverDay.getNumber()) % 7;
     var rows = 6;
     html = '<tr>';
     for(i = 0; i < rows * 7; i++) {

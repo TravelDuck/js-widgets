@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Online Booking Example</title>
+  <title>Date Range Example</title>
 
   <!-- Dependencies -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -17,8 +17,24 @@
 </head>
 <body>
 
-  <!-- Online Booking widget for the property with the id 1 -->
-  <div class="gaOnlineBookingModal" data-property-id="1"></div>
+  <!-- Start date input, identified as "#example-start-date" -->
+  <input id="example-start-date" placeholder="Start date">
+
+  <!-- End date input, identified as "#example-end-date" -->
+  <input id="example-end-date" placeholder="End date">
+
+
+  <script>
+    $(function() {
+      $.fn.gaDateRangePicker({
+        format: "yyyy-mm-dd",
+        weekStart: 1,
+        startDateInput: "#example-start-date",
+        endDateInput: "#example-end-date"
+      });
+    });
+
+  </script>
 
 </body>
 </html>

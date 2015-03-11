@@ -5,20 +5,21 @@ var Datepicker = function(element, options){
     .appendTo('body')
     //.appendTo(element.parentNode)
     .on({
-      click: $.proxy(this.click, this)//,
+      mousedown: $.proxy(this.click, this),
+      mouseover: $.proxy(this.mouseover, this)//,
       //mousedown: $.proxy(this.mousedown, this)
     });
   this.isInput = this.element.is('input');
   this.component = this.element.is('.date') ? this.element.find('.add-on') : false;
 
-  if (this.isInput) {
+  if(this.isInput) {
     this.element.on({
       focus: $.proxy(this.show, this),
-      //blur: $.proxy(this.hide, this),
+      blur: $.proxy(this.hide, this),
       keyup: $.proxy(this.update, this)
     });
   } else {
-    if (this.component){
+    if(this.component){
       this.component.on('click', $.proxy(this.show, this));
     } else {
       this.element.on('click', $.proxy(this.show, this));
@@ -54,13 +55,32 @@ var Datepicker = function(element, options){
     }
   }
   this.startViewMode = this.viewMode;
-  this.weekStart = options.weekStart||this.element.data('date-weekstart')||0;
+  this.weekStart = options.weekStart || this.element.data('date-weekstart') || 0;
   this.weekEnd = this.weekStart === 0 ? 6 : this.weekStart - 1;
   this.onRender = options.onRender;
   this.fillDow();
   this.fillMonths();
   this.update();
   this.showMode();
+
+
+  //
+  // Reposition on resize
+  //
+  $(window).on('resize', $.proxy(this.place, this));
+
+
+  //
+  // Auto close when click off of date picker.
+  // Exclude the input, and the datepicker.
+  //
+  var that = this;
+  $(document).on('mousedown', function(ev) {
+    if($(ev.target).closest('.datepicker').length == 0 && ev.target != element) {
+      that.hide();
+    }
+  });
+
 };
 
 Datepicker.prototype = {
@@ -70,19 +90,6 @@ Datepicker.prototype = {
     this.picker.show();
     this.height = this.component ? this.component.outerHeight() : this.element.outerHeight();
     this.place();
-    $(window).on('resize', $.proxy(this.place, this));
-    if (e ) {
-      e.stopPropagation();
-      e.preventDefault();
-    }
-    if (!this.isInput) {
-    }
-    var that = this;
-    $(document).on('mousedown', function(ev){
-      if ($(ev.target).closest('.datepicker').length == 0) {
-        that.hide();
-      }
-    });
     this.element.trigger({
       type: 'show',
       date: this.date
@@ -124,6 +131,12 @@ Datepicker.prototype = {
     }
     this.set();
     this.viewDate = new Date(this.date.getFullYear(), this.date.getMonth(), 1, 0, 0, 0, 0);
+    this.fill();
+  },
+
+
+  setViewDate: function(viewDate) {
+    this.viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1, 0, 0, 0, 0);
     this.fill();
   },
 
@@ -297,6 +310,39 @@ Datepicker.prototype = {
     }
   },
 
+
+  mouseover: function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    return;
+    var target = $(e.target).closest('span, td, th');
+    if (target.length === 1) {
+      switch(target[0].nodeName.toLowerCase()) {
+        case 'td':
+          if (target.is('.day') && !target.is('.disabled')){
+            var day = parseInt(target.text(), 10)||1;
+            var month = this.viewDate.getMonth();
+            if (target.is('.old')) {
+              month -= 1;
+            } else if (target.is('.new')) {
+              month += 1;
+            }
+            var year = this.viewDate.getFullYear();
+            var date = new Date(year, month, day,0,0,0,0);
+
+            this.element.trigger({
+              type: 'hoverDate',
+              date: date,
+              viewMode: DPGlobal.modes[this.viewMode].clsName
+            });
+          }
+          break;
+      }
+    }
+  },
+
+
   mousedown: function(e){
     e.stopPropagation();
     e.preventDefault();
@@ -310,24 +356,24 @@ Datepicker.prototype = {
   }
 };
 
-$.fn.bbDatepicker = function ( option, val ) {
+$.fn.gaDatePicker = function ( option, val ) {
   return this.each(function () {
     var $this = $(this),
       data = $this.data('datepicker'),
       options = typeof option === 'object' && option;
     if (!data) {
-      $this.data('datepicker', (data = new Datepicker(this, $.extend({}, $.fn.bbDatepicker.defaults,options))));
+      $this.data('datepicker', (data = new Datepicker(this, $.extend({}, $.fn.gaDatePicker.defaults,options))));
     }
     if (typeof option === 'string') data[option](val);
   });
 };
 
-$.fn.bbDatepicker.defaults = {
+$.fn.gaDatePicker.defaults = {
   onRender: function(date) {
     return '';
   }
 };
-$.fn.bbDatepicker.Constructor = Datepicker;
+$.fn.gaDatePicker.Constructor = Datepicker;
 
 var DPGlobal = {
   modes: [
@@ -429,7 +475,7 @@ var DPGlobal = {
     '</thead>',
   contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>'
 };
-DPGlobal.template = '<div class="ga-datepicker datepicker dropdown-menu">'+
+DPGlobal.template = '<div class="gaDatePicker datepicker dropdown-menu">'+
   '<div class="datepicker-days">'+
   '<table class=" table-condensed">'+
   DPGlobal.headTemplate+
