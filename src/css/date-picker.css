@@ -378,4 +378,9 @@
 
 .gaDatePicker .clear-btn-wrapper > .clear-btn {
   padding-right: 10px;
+  cursor: pointer;
+}
+
+.gaDatePicker .clear-btn-wrapper > .clear-btn:hover {
+  text-decoration: underline;
 }
