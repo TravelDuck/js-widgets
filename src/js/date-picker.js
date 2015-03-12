@@ -19,14 +19,14 @@ var Datepicker = function(element, options){
       keyup: $.proxy(this.update, this)
     });
   } else {
-    if(this.component){
+    if(this.component) {
       this.component.on('click', $.proxy(this.show, this));
     } else {
       this.element.on('click', $.proxy(this.show, this));
     }
   }
 
-  this.minViewMode = options.minViewMode||this.element.data('date-minviewmode')||0;
+  this.minViewMode = options.minViewMode || this.element.data('date-minviewmode') || 0;
   if (typeof this.minViewMode === 'string') {
     switch (this.minViewMode) {
       case 'months':
@@ -58,6 +58,7 @@ var Datepicker = function(element, options){
   this.weekStart = options.weekStart || this.element.data('date-weekstart') || 0;
   this.weekEnd = this.weekStart === 0 ? 6 : this.weekStart - 1;
   this.onRender = options.onRender;
+  this.placeRight = options.placeRight;
   this.fillDow();
   this.fillMonths();
   this.update();
@@ -140,12 +141,28 @@ Datepicker.prototype = {
     this.fill();
   },
 
-  place: function(){
+  place: function() {
     var offset = this.component ? this.component.offset() : this.element.offset();
+    var inputWidth = this.component ? this.component.outerWidth() : this.element.outerWidth();
+    var pickerWidth = this.picker.outerWidth();
+
+    var top = offset.top + this.height;
+    var left = offset.left;
+    if(this.placeRight) {
+      left += inputWidth - pickerWidth;
+    }
     this.picker.css({
-      top: offset.top + this.height,
-      left: offset.left
+      top: top,
+      left: left
     });
+
+    if(this.placeRight) {
+      this.picker.removeClass("place-left");
+      this.picker.addClass("place-right");
+    } else {
+      this.picker.removeClass("place-right");
+      this.picker.addClass("place-left")
+    }
   },
 
   update: function(newDate){

@@ -117,6 +117,7 @@
     var checkout = $(endDateInput).prop(
       "readonly", true
     ).gaDatePicker({
+      placeRight: true,
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date));
 
