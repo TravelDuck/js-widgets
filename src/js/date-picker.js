@@ -76,7 +76,7 @@ var Datepicker = function(element, options){
   //
   var that = this;
   $(document).on('mousedown', function(ev) {
-    if($(ev.target).closest('.datepicker').length == 0 && ev.target != element) {
+    if($(ev.target).closest('.gaDatePicker').length == 0 && ev.target != element) {
       that.hide();
     }
   });
@@ -475,7 +475,7 @@ var DPGlobal = {
     '</thead>',
   contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>'
 };
-DPGlobal.template = '<div class="gaDatePicker datepicker dropdown-menu">'+
+DPGlobal.template = '<div class="gaDatePicker dropdown-menu">'+
   '<div class="datepicker-days">'+
   '<table class=" table-condensed">'+
   DPGlobal.headTemplate+
