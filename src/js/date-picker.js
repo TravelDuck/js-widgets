@@ -112,6 +112,16 @@ Datepicker.prototype = {
     });
   },
 
+  clear: function() {
+    this.hide();
+    this.element.val("");
+    this.update();
+
+    this.element.trigger({
+      type: 'clear'
+    });
+  },
+
   set: function() {
     var formated = DPGlobal.formatDate(this.date, this.format);
     if (!this.isInput) {
@@ -283,7 +293,10 @@ Datepicker.prototype = {
           }
           break;
         case 'span':
-          if (target.is('.month')) {
+          if (target.is('.clear-btn')) {
+            this.clear();
+            return;
+          } else if (target.is('.month')) {
             var month = target.parent().find('span').index(target);
             this.viewDate.setMonth(month);
           } else {
@@ -492,23 +505,24 @@ var DPGlobal = {
     '</thead>',
   contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>'
 };
-DPGlobal.template = '<div class="gaDatePicker dropdown-menu">'+
-  '<div class="datepicker-days">'+
-  '<table class=" table-condensed">'+
-  DPGlobal.headTemplate+
-  '<tbody></tbody>'+
-  '</table>'+
-  '</div>'+
-  '<div class="datepicker-months">'+
-  '<table class="table-condensed">'+
-  DPGlobal.headTemplate+
-  DPGlobal.contTemplate+
-  '</table>'+
-  '</div>'+
-  '<div class="datepicker-years">'+
-  '<table class="table-condensed">'+
+DPGlobal.template = '<div class="gaDatePicker dropdown-menu">' +
+  '<div class="datepicker-days">' +
+  '<table class="table-condensed">' +
+  DPGlobal.headTemplate +
+  '<tbody></tbody>' +
+  '</table>' +
+  '<div class="clear-btn-wrapper"><span class="clear-btn">Clear</span></div>' +
+  '</div>' +
+  '<div class="datepicker-months">' +
+  '<table class="table-condensed">' +
   DPGlobal.headTemplate+
   DPGlobal.contTemplate+
-  '</table>'+
-  '</div>'+
+  '</table>' +
+  '</div>' +
+  '<div class="datepicker-years">' +
+  '<table class="table-condensed">' +
+  DPGlobal.headTemplate +
+  DPGlobal.contTemplate +
+  '</table>' +
+  '</div>' +
   '</div>';

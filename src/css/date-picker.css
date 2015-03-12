@@ -367,3 +367,15 @@
   bottom:100%;
   margin-bottom:1px
 }
+
+
+/*
+ * Clear btn
+ */
+.gaDatePicker .clear-btn-wrapper {
+  text-align: right;
+}
+
+.gaDatePicker .clear-btn-wrapper > .clear-btn {
+  padding-right: 10px;
+}

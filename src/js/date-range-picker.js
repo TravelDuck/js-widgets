@@ -111,6 +111,10 @@
       //checkout.gaDatePicker("hide");
       checkin.gaDatePicker("show");
 
+    }).on("clear", function() {
+
+      clear();
+
     });
 
 
@@ -162,6 +166,10 @@
       setSelectedEndDayFromDate(e.date);
       checkin.gaDatePicker("update");
       checkout.gaDatePicker("update");
+
+    }).on("clear", function() {
+
+      clear();
 
     });
 
