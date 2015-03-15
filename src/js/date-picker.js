@@ -1,6 +1,9 @@
 var Datepicker = function(element, options){
   this.element = $(element);
-  this.format = DPGlobal.parseFormat(options.format || this.element.data('date-format') || 'mm/dd/yyyy');
+
+  this.format = DPGlobal.parseFormat(options.format || this.element.data("date-format") || "mm/dd/yyyy");
+  this.allowBeforeToday = options.allowBeforeToday || this.element.data('allow-before-today') || true;
+
   this.picker = $(DPGlobal.template)
     .appendTo('body')
     //.appendTo(element.parentNode)
@@ -54,6 +57,7 @@ var Datepicker = function(element, options){
         break;
     }
   }
+
   this.startViewMode = this.viewMode;
   this.weekStart = options.weekStart || this.element.data('date-weekstart') || 0;
   this.weekEnd = this.weekStart === 0 ? 6 : this.weekStart - 1;
@@ -208,7 +212,14 @@ Datepicker.prototype = {
   render: function() {
 
     var that = this;
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth(); // January is 0!
+    var yyyy = today.getFullYear();
+    today = Date.UTC(yyyy, mm, dd, 0, 0, 0);
+
     this.picker.find(".day").each(function(index, e) {
+
       var elem = $(e);
       var dateString = elem.data("date");
       var date = DPGlobal.parseDate(dateString, that.format);
@@ -217,7 +228,7 @@ Datepicker.prototype = {
 
       var hasOldClass = classes.indexOf("old") != -1;
       var hasNewClass = classes.indexOf("new") != -1;
-      var hasTodayClass = classes.indexOf("today") != -1;
+      var hasCurrentClass = classes.indexOf("current") != -1;
 
       elem.removeClass();
 
@@ -225,7 +236,9 @@ Datepicker.prototype = {
 
       if(hasOldClass) { classes += " old"; }
       if(hasNewClass) { classes += " new"; }
-      if(hasTodayClass) { classes += " today"; }
+      if(hasCurrentClass) { classes += " current"; }
+
+      if(!this.allowBeforeToday && date.valueOf() < today.valueOf()) { classes += " disabled"; }
 
       elem.addClass(classes);
 
@@ -269,7 +282,7 @@ Datepicker.prototype = {
         clsName += ' new';
       }
       if(prevMonth.valueOf() === currentDate) {
-        clsName += ' active';
+        clsName += ' current';
       }
 
       dateAsString = DPGlobal.formatDate(prevMonth, this.format);
@@ -287,10 +300,10 @@ Datepicker.prototype = {
       .find('th:eq(1)')
       .text(year)
       .end()
-      .find('span').removeClass('active');
+      .find('span').removeClass('current');
 
-    if (currentYear === year) {
-      months.eq(this.date.getMonth()).addClass("today");
+    if(currentYear === year) {
+      months.eq(this.date.getMonth()).addClass("current");
     }
 
     html = '';
@@ -435,7 +448,7 @@ $.fn.gaDatePicker = function ( option, val ) {
       data = $this.data('datepicker'),
       options = typeof option === 'object' && option;
     if (!data) {
-      $this.data('datepicker', (data = new Datepicker(this, $.extend({}, $.fn.gaDatePicker.defaults,options))));
+      $this.data('datepicker', (data = new Datepicker(this, $.extend({}, $.fn.gaDatePicker.defaults, options))));
     }
     if (typeof option === 'string') data[option](val);
   });
@@ -444,7 +457,8 @@ $.fn.gaDatePicker = function ( option, val ) {
 $.fn.gaDatePicker.defaults = {
   onRender: function(date) {
     return '';
-  }
+  },
+  allowBeforeToday: true
 };
 $.fn.gaDatePicker.Constructor = Datepicker;
 

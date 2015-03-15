@@ -81,7 +81,6 @@
       "readonly", true
     ).gaDatePicker({
 
-      todayBtn: true,
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date), SELECTSTART);
         return classes.join(" ");
@@ -89,7 +88,8 @@
 
       // Display settings
       format: settings.format,
-      weekStart: settings.weekStart
+      weekStart: settings.weekStart,
+      allowBeforeToday: false
 
     }).on("focus", function(e) {
 
@@ -137,7 +137,6 @@
       "readonly", true
     ).gaDatePicker({
 
-      placeRight: true,
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date), SELECTEND);
         return classes.join(" ");
@@ -145,7 +144,9 @@
 
       // Display settings
       format: settings.format,
-      weekStart: settings.weekStart
+      weekStart: settings.weekStart,
+      placeRight: true,
+      allowBeforeToday: false
 
     }).on("focus", function(e) {
 
