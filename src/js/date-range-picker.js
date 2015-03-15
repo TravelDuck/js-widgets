@@ -8,6 +8,11 @@
   var selectedEndDay;
 
 
+  const NONE = 0;
+  const SELECTSTART = 1;
+  const SELECTEND = 2;
+
+
   var methods = {
     init : function(options) {
 
@@ -77,7 +82,7 @@
     ).gaDatePicker({
       todayBtn: true,
       onRender: function(date) {
-        var classes = generateClasses(CalendarDay.fromDate(date));
+        var classes = generateClasses(CalendarDay.fromDate(date), SELECTSTART);
         return classes.join(" ");
       },
 
@@ -123,7 +128,7 @@
     ).gaDatePicker({
       placeRight: true,
       onRender: function(date) {
-        var classes = generateClasses(CalendarDay.fromDate(date));
+        var classes = generateClasses(CalendarDay.fromDate(date), SELECTEND);
 
         //classes = addColourClasses(CalendarDay.fromDate(date), colouring, classes, false);
         return classes.join(" ");
@@ -209,27 +214,51 @@
 
 
 
-  function generateClasses(calendarDay) {
+  function generateClasses(calendarDay, mode) {
     var classes = [];
 
+    /*
+     * Start date
+     */
     if(selectedStartDay && calendarDay.isEqualTo(selectedStartDay)) {
       classes.push("start-date");
     }
 
+    /*
+     * End date
+     */
     if(selectedEndDay && calendarDay.isEqualTo(selectedEndDay)) {
       classes.push("end-date");
     }
 
+    /*
+     * Range colouring (between start and end date)
+     */
     if(
-      selectedStartDay && selectedEndDay &&
+        selectedStartDay && selectedEndDay &&
         calendarDay.isGreaterThan(selectedStartDay) &&
         calendarDay.isLessThan(selectedEndDay)
       ) {
       classes.push("selected-date");
     }
 
+    /*
+     * Range boundaries (prevent selecting end date before start etc)
+     */
+    if(
+      (mode == SELECTEND && selectedStartDay && calendarDay.isLessThanOrEqualTo(selectedStartDay)) ||
+      (mode == SELECTSTART && selectedEndDay && calendarDay.isGreaterThanOrEqualTo(selectedEndDay))
+    ) {
+      classes.push("disabled");
+    }
+
+
     return classes;
   }
+
+
+
+
 
 
 }(jQuery));
