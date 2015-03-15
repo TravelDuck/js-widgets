@@ -80,6 +80,7 @@
     var checkin = $(startDateInput).prop(
       "readonly", true
     ).gaDatePicker({
+
       todayBtn: true,
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date), SELECTSTART);
@@ -94,7 +95,7 @@
 
       checkout.gaDatePicker("hide");
 
-    }).on('changeDate', function(e) {
+    }).on("changeDate", function(e) {
       setSelectedStartDayFromDate(e.date);
 
       //checkout.gaDatePicker("setValue", e.date);
@@ -109,11 +110,16 @@
       }
 
       checkout.focus();
+      checkout.gaDatePicker("render");
 
       //loadPrice();
+    }).on("hoverDate", function(e) {
+
+      setSelectedStartDayFromDate(e.date);
+      checkin.gaDatePicker("render");
+
     }).on("mousedown", function(e) {
 
-      //checkout.gaDatePicker("hide");
       checkin.gaDatePicker("show");
 
     }).on("clear", function() {
@@ -123,20 +129,33 @@
     });
 
 
+
+
+
+
     var checkout = $(endDateInput).prop(
       "readonly", true
     ).gaDatePicker({
+
       placeRight: true,
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date), SELECTEND);
-
-        //classes = addColourClasses(CalendarDay.fromDate(date), colouring, classes, false);
         return classes.join(" ");
       },
 
       // Display settings
       format: settings.format,
       weekStart: settings.weekStart
+
+    }).on("focus", function(e) {
+
+      checkin.gaDatePicker("hide");
+
+      if(!checkin.val()) {
+        clear();
+        checkout.gaDatePicker("hide");
+        checkin.focus();
+      }
 
     }).on('changeDate', function(e) {
       setSelectedEndDayFromDate(e.date);
@@ -148,16 +167,6 @@
       checkout.blur();
 
       //loadPrice();
-    }).on("focus", function(e) {
-
-      checkin.gaDatePicker("hide");
-
-      if(!checkin.val()) {
-        clear();
-        checkout.gaDatePicker("hide");
-        checkin.focus();
-      }
-
     }).on("hide", function() {
 
       if(!checkout.val()) {
@@ -166,11 +175,8 @@
 
     }).on("hoverDate", function(e) {
 
-      console.log("hover");
-
       setSelectedEndDayFromDate(e.date);
-      checkin.gaDatePicker("update");
-      checkout.gaDatePicker("update");
+      checkout.gaDatePicker("render");
 
     }).on("clear", function() {
 
