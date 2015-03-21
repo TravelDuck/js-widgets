@@ -152,7 +152,9 @@
         "<table>" +
         "<tr>" +
         "<td style=\"width:80px\">" +
-        "<img class=\"img-round\" style=\"width:100%\" src=\"https://travelduck.co/get-away/img/logo-square.png\" />" +
+        "<a href='https://travelduck.co'>" +
+        "<img class=\"img-round\" style=\"width:100%\" src=\"https://travelduck.co/travelduck/img/logo-square/80x80-fit-circle.png\" />" +
+        "</a>" +
         "</td>" +
         "<td>" +
         "<ul class=\"fa-ul\">" +

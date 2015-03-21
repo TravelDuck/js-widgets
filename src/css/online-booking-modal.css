@@ -152,6 +152,10 @@
   font-family: "Roboto";
   font-weight: 300;
 }
+.travelduck.onlineBookingModal .modal-header h3 {
+
+}
+
 .travelduck.onlineBookingModal .modal-header .close {
   margin-top:-2px
 }
