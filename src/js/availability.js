@@ -176,7 +176,7 @@
       var unknownToUnavailable = availability.unknownToUnavailable;
       var unknownToUnknown = availability.unknownToUnknown;
 
-      $(".travelduckAvailability .day").each(function() {
+      $(".travelduck.availability .day").each(function() {
         $(this).removeClass("available-to-available available-to-unavailable available-to-unknown");
       });
 

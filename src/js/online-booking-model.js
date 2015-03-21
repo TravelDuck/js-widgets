@@ -118,7 +118,7 @@
         "<div class=\"modal-dialog\">" +
         "<div class=\"modal-content\">" +
         "<div class=\"modal-header\">" +
-        "<h3 class=\"modal-title\">Book online</h3>" +
+        "<h3 class=\"modal-title\">Book with TravelDuck</h3>" +
         "</div>" +
         "<div class=\"modal-body\">" +
         "<div class=\"datepicker-inputs\">" +
@@ -126,7 +126,7 @@
         "<div class=\"col50\"><input readonly class=\"start-date\" placeholder=\"Start date\" /></div>" +
         "<div class=\"col50\"><input readonly class=\"end-date\" placeholder=\"End date\" /></div>" +
         "</div>" +
-        "<div class=\"reset-btn\">Reset</div>" +
+        "<div class=\"btn btn-secondary reset-btn\">Reset</div>" +
         "</div>" +
 
         "<div class=\"booking-display-wrapper\">" +
@@ -138,7 +138,7 @@
         "<div class=\"price-display\">" +
         "<div class=\"text\">Book now from:</div>" +
         "<div class=\"price\"></div>" +
-        "<div class=\"button\">Book now</div>" +
+        "<div class=\"btn btn-secondary\">Book now</div>" +
         "</div>" +
         "<div class=\"contact-owner\">" +
         "<div class=\"title\" style='text-align: center'>Contact us for a quote</div>" +
@@ -176,7 +176,7 @@
     $(modal).modal({show:false});
 
 
-    $(mainContainer).append("<button class=\"book-online-btn\">Book online</button>");
+    $(mainContainer).append("<button class=\"btn btn-secondary book-online-btn\">Book online</button>");
     var bookOnlineButton = $(mainContainer).find(".book-online-btn");
     $(bookOnlineButton).click(function() {
       $(modal).modal('show')
@@ -192,7 +192,7 @@
     bookingPriceDisplay = $(mainContainer).find(".price-display .price");
     bookingPriceLoadingWrapper = $(mainContainer).find(".loading-price");
     bookingPriceContactOwnerWrapper = $(mainContainer).find(".contact-owner");
-    var bookingPriceDisplayBookButton = $(mainContainer).find(".price-display .button");
+    var bookingPriceDisplayBookButton = $(mainContainer).find(".price-display .btn");
 
     $(resetInputBtn).click(function() {
       resetDatePickers();
@@ -285,7 +285,7 @@
         calendarDayRange, numberOfAdults, numberOfChildren, numberOfInfants, numberOfPets, function(amount) {
           hideLoadingBookingPrice();
           if(amount != null) {
-            showBookingPrice(amount.symbol() + amount.getValue());
+            showBookingPrice(amount);
           } else {
             showContactOwnerBookingPrice();
           }
@@ -487,12 +487,12 @@
   /**
    * Show the given booking price.
    *
-   * @param price
+   * @param {Amount} price
    */
   function showBookingPrice(price) {
     var animationTime = arguments[1] == null ? 300 : arguments[1];
     $(bookingPriceDisplayWrapper).slideDown(animationTime);
-    $(bookingPriceDisplay).html(price);
+    $(bookingPriceDisplay).html(price.symbol() + price.getValue());
   }
 
 

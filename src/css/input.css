@@ -1,0 +1,27 @@
+.travelduck input,
+.travelduck select {
+  color: #676767;
+  font-size: 15px;
+  height: 40px;
+  border-width: 1px 1px 3px 1px;
+  border-style: solid;
+  border-color: #e9e9e9;
+
+  border-radius: 4px;
+  box-shadow: none;
+
+  background-color: #FBFBFB;
+}
+
+
+.travelduck input:focus,
+.travelduck select:focus {
+  background-color: #fff;
+}
+
+
+.travelduck input[readonly="readonly"]:not([disabled]),
+.travelduck input[readonly]:not([disabled]) {
+   background-color: #fff;
+   cursor: pointer;
+ }

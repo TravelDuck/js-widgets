@@ -3,13 +3,13 @@
  */
 .travelduckDatePicker td.day.available-to-available,
 .travelduckDatePicker td.day.available-to-available.disabled:hover,
-.travelduckAvailability .day.available-to-available {
+.travelduck.availability .day.available-to-available {
   background: #A4D61E;
 }
 
 .travelduckDatePicker td.day.available-to-unavailable,
 .travelduckDatePicker td.day.available-to-unavailable.disabled:hover,
-.travelduckAvailability .day.available-to-unavailable {
+.travelduck.availability .day.available-to-unavailable {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #A4D61E), color-stop(50%, #A4D61E), color-stop(51%, #C65A5A), color-stop(100%, #C65A5A));
@@ -22,7 +22,7 @@
 
 .travelduckDatePicker td.day.available-to-unknown,
 .travelduckDatePicker td.day.available-to-unknown.disabled:hover,
-.travelduckAvailability .day.available-to-unknown {
+.travelduck.availability .day.available-to-unknown {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #A4D61E), color-stop(50%, #A4D61E), color-stop(51%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
@@ -38,7 +38,7 @@
  */
 .travelduckDatePicker td.day.unavailable-to-available,
 .travelduckDatePicker td.day.unavailable-to-available.disabled:hover,
-.travelduckAvailability .day.unavailable-to-available {
+.travelduck.availability .day.unavailable-to-available {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #C65A5A), color-stop(49%, #C65A5A), color-stop(50%, #A4D61E), color-stop(100%, #A4D61E));
@@ -52,13 +52,13 @@
 
 .travelduckDatePicker td.day.unavailable-to-unavailable,
 .travelduckDatePicker td.day.unavailable-to-unavailable.disabled:hover,
-.travelduckAvailability .day.unavailable-to-unavailable {
+.travelduck.availability .day.unavailable-to-unavailable {
   background: #C65A5A;
 }
 
 .travelduckDatePicker td.day.unavailable-to-unknown,
 .travelduckDatePicker td.day.unavailable-to-unknown.disabled:hover,
-.travelduckAvailability .day.unavailable-to-unknown {
+.travelduck.availability .day.unavailable-to-unknown {
   background: #C65A5A;
   background: -moz-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #C65A5A), color-stop(50%, #C65A5A), color-stop(51%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
@@ -77,7 +77,7 @@
  */
 .travelduckDatePicker td.day.unknown-to-available,
 .travelduckDatePicker td.day.unknown-to-available.disabled:hover,
-.travelduckAvailability .day.unknown-to-available {
+.travelduck.availability .day.unknown-to-available {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(49%, rgba(238, 238, 238, 1)), color-stop(50%, #A4D61E), color-stop(100%, #A4D61E));
@@ -90,7 +90,7 @@
 
 .travelduckDatePicker td.day.unknown-to-unavailable,
 .travelduckDatePicker td.day.unknown-to-unavailable.disabled:hover,
-.travelduckAvailability .day.unknown-to-unavailable {
+.travelduck.availability .day.unknown-to-unavailable {
   background: #C65A5A;
   background: -moz-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(49%, rgba(238, 238, 238, 1)), color-stop(50%, #C65A5A), color-stop(100%, #C65A5A));
@@ -103,7 +103,7 @@
 
 .travelduckDatePicker td.day.unknown-to-unknown,
 .travelduckDatePicker td.day.unknown-to-unknown.disabled:hover,
-.travelduckAvailability .day.unknown-to-unknown {
+.travelduck.availability .day.unknown-to-unknown {
   background: #eee;
 }
 

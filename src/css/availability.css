@@ -1,8 +1,8 @@
-.travelduckAvailability {
+.travelduck.availability {
 
 }
 
-.travelduckAvailability table {
+.travelduck.availability table {
   width: 252px;
   border: 0;
   border-collapse: separate;
@@ -11,17 +11,17 @@
   margin: 15px;
 }
 
-.travelduckAvailability .month-name {
+.travelduck.availability .month-name {
   text-align: center;
   height: 30px;
 }
 
-.travelduckAvailability .day-of-week-name {
+.travelduck.availability .day-of-week-name {
   text-align: center;
   height: 30px;
 }
 
-.travelduckAvailability .day {
+.travelduck.availability .day {
   width: 36px;
   height: 36px;
   text-align: center;

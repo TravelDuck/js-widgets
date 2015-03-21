@@ -1,5 +1,5 @@
-.travelduckOnlineBookingModal .input-append.date .add-on i,
-.travelduckOnlineBookingModal .input-prepend.date .add-on i {
+.travelduck.onlineBookingModal .input-append.date .add-on i,
+.travelduck.onlineBookingModal .input-prepend.date .add-on i {
   display: block;
   cursor: pointer;
   width: 16px;
@@ -7,19 +7,13 @@
 }
 
 
-.travelduckOnlineBookingModal input[readonly="readonly"]:not([disabled]),
-.travelduckOnlineBookingModal input[readonly]:not([disabled]) {
-  background-color: #fff !important;
-  cursor: pointer;
-}
 
 
-
-.travelduckOnlineBookingModal .booking-price-display {
+.travelduck.onlineBookingModal .booking-price-display {
   position: relative;
 }
 
-.travelduckOnlineBookingModal .booking-price-display .text:before {
+.travelduck.onlineBookingModal .booking-price-display .text:before {
   box-shadow: 0 0 10px rgba(0,0,0,0.6);
   content: ' ';
   height: 10px;
@@ -35,68 +29,40 @@
 
 
 
-.travelduckOnlineBookingModal {
+.travelduck.onlineBookingModal {
 
 }
 
 
 
-
-.travelduckOnlineBookingModal .reset-btn {
-  float: right;
-  background-color: #FFD11C;
-  padding: 7px 10px;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight:300;
-  font-size:13px;
-  height: 18px;
-  cursor: pointer;
-  border-radius: 4px;
-  box-sizing: content-box;
-}
-
-.travelduckOnlineBookingModal .reset-btn:hover {
-  color:#fff;
-}
-
-.travelduckOnlineBookingModal .datepicker-inputs:after {
+.travelduck.onlineBookingModal .datepicker-inputs:after {
   content: " ";
   clear: both;
   display: table;
 }
 
 
-.travelduckOnlineBookingModal .datepicker-inputs {
+.travelduck.onlineBookingModal .datepicker-inputs {
   width: 308px;
 }
 
 
 
-.travelduckOnlineBookingModal .inputs-wrapper {
+.travelduck.onlineBookingModal .inputs-wrapper {
   margin: 0 -5px;
   width: 253px;
   float: left;
 }
 
-.travelduckOnlineBookingModal .inputs-wrapper:after {
+.travelduck.onlineBookingModal .inputs-wrapper:after {
   content: " ";
   clear: both;
   display: table;
 }
 
-.travelduckOnlineBookingModal .col50 {
-  width: 50%;
-  padding: 0 5px;
-  box-sizing: border-box;
-  float: left;
-}
 
-.travelduckOnlineBookingModal .col50 input.start-date,
-.travelduckOnlineBookingModal .col50 input.end-date {
+.travelduck.onlineBookingModal .col50 input {
   width: 100%;
-  border-radius: 4px;
-  box-shadow: none;
-  border: 1px solid #dce4ec;
   padding: 6px 6px;
   font-size: 15px;
 }
@@ -113,10 +79,10 @@
 
 
 
-.travelduckOnlineBookingModal .modal-open {
+.travelduck.onlineBookingModal .modal-open {
   overflow:hidden
 }
-.travelduckOnlineBookingModal .modal {
+.travelduck.onlineBookingModal .modal {
   display:none;
   overflow:auto;
   overflow-y:scroll;
@@ -128,7 +94,7 @@
   -webkit-overflow-scrolling:touch;
   outline:0
 }
-.travelduckOnlineBookingModal .modal.fade .modal-dialog {
+.travelduck.onlineBookingModal .modal.fade .modal-dialog {
   -webkit-transform:translate(0,-25%);
   -ms-transform:translate(0,-25%);
   transform:translate(0,-25%);
@@ -137,18 +103,18 @@
   -o-transition:-o-transform .3s ease-out;
   transition:transform .3s ease-out
 }
-.travelduckOnlineBookingModal .modal.in .modal-dialog {
+.travelduck.onlineBookingModal .modal.in .modal-dialog {
   -webkit-transform:translate(0,0);
   -ms-transform:translate(0,0);
   transform:translate(0,0)
 }
-.travelduckOnlineBookingModal .modal-dialog{
+.travelduck.onlineBookingModal .modal-dialog{
   position:relative;
   width:auto;
   margin:10px;
   z-index:1050;
 }
-.travelduckOnlineBookingModal .modal-content {
+.travelduck.onlineBookingModal .modal-content {
   position:relative;
   background-color:#fff;
   border:1px solid #999;
@@ -159,7 +125,7 @@
   background-clip:padding-box;
   outline:0
 }
-.travelduckOnlineBookingModal .modal-backdrop {
+.travelduck.onlineBookingModal .modal-backdrop {
   position:fixed;
   top:0;
   right:0;
@@ -169,12 +135,12 @@
   background-color:#000
 }
 
-.travelduckOnlineBookingModal .modal-backdrop.fade {
+.travelduck.onlineBookingModal .modal-backdrop.fade {
   opacity:0;
   filter:alpha(opacity=0)
 }
-.travelduckOnlineBookingModal .modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}
-.travelduckOnlineBookingModal .modal-header {
+.travelduck.onlineBookingModal .modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}
+.travelduck.onlineBookingModal .modal-header {
   padding:15px;
   border-bottom:1px solid #e5e5e5;
   min-height:16.428571429px;
@@ -182,56 +148,56 @@
   border-radius: 4px 4px 0 0;
   color: #fff;
 }
-.travelduckOnlineBookingModal .modal-header h3 {
+.travelduck.onlineBookingModal .modal-header h3 {
   font-family: "Roboto";
   font-weight: 300;
 }
-.travelduckOnlineBookingModal .modal-header .close {
+.travelduck.onlineBookingModal .modal-header .close {
   margin-top:-2px
 }
-.travelduckOnlineBookingModal .modal-title {
+.travelduck.onlineBookingModal .modal-title {
   margin:0;
   line-height:1.428571429;
 }
-.travelduckOnlineBookingModal .modal-body {
+.travelduck.onlineBookingModal .modal-body {
   position:relative;
   padding:20px;
 }
-.travelduckOnlineBookingModal .modal-footer {
+.travelduck.onlineBookingModal .modal-footer {
   margin-top:15px;
   padding:19px 20px 20px;
   text-align:right;
   border-top:1px solid #e5e5e5;
 }
-.travelduckOnlineBookingModal .modal-footer .btn+.btn {
+.travelduck.onlineBookingModal .modal-footer .btn+.btn {
   margin-left:5px;
   margin-bottom:0;
 }
-.travelduckOnlineBookingModal .modal-footer .btn-group .btn+.btn {
+.travelduck.onlineBookingModal .modal-footer .btn-group .btn+.btn {
   margin-left:-1px
 }
-.travelduckOnlineBookingModal .modal-footer .btn-block+.btn-block {
+.travelduck.onlineBookingModal .modal-footer .btn-block+.btn-block {
   margin-left:0
 }
 
 
-.travelduckOnlineBookingModal .modal-dialog{
+.travelduck.onlineBookingModal .modal-dialog{
   width:350px;
   margin:30px auto
 }
-.travelduckOnlineBookingModal .modal-content{
+.travelduck.onlineBookingModal .modal-content{
   -webkit-box-shadow:0 5px 15px rgba(0,0,0,.5);
   box-shadow:0 5px 15px rgba(0,0,0,.5);
 }
 
 
-.travelduckOnlineBookingModal .modal-footer:before,
-.travelduckOnlineBookingModal .modal-footer:after {
+.travelduck.onlineBookingModal .modal-footer:before,
+.travelduck.onlineBookingModal .modal-footer:after {
   display:table;
   content:" "
 }
 
-.travelduckOnlineBookingModal .modal-footer:after {
+.travelduck.onlineBookingModal .modal-footer:after {
   clear:both
 }
 
@@ -239,42 +205,42 @@
 
 
 
-.travelduckOnlineBookingModal .modal-body .fa-check {
+.travelduck.onlineBookingModal .modal-body .fa-check {
   display: block;
   margin-top: 4px;
   margin-bottom: 4px;
   font: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.travelduckOnlineBookingModal .modal-body .fa-check::before {
+.travelduck.onlineBookingModal .modal-body .fa-check::before {
   color: #93C54B;
   margin-right:6px;
 }
-.travelduckOnlineBookingModal .modal-body .fa-ul {
+.travelduck.onlineBookingModal .modal-body .fa-ul {
   margin-left: 15px;
   margin-top: 0;
   margin-bottom:0;
   font-size: 15px;
 }
 
-.travelduckOnlineBookingModal .modal-body .fa-ul span {
+.travelduck.onlineBookingModal .modal-body .fa-ul span {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:300;
 }
 
-.travelduckOnlineBookingModal .modal-body .fa-ul a {
+.travelduck.onlineBookingModal .modal-body .fa-ul a {
   cursor: pointer;
 }
 
-.travelduckOnlineBookingModal .modal-body a {
+.travelduck.onlineBookingModal .modal-body a {
   color: #FF5426;
   text-decoration: none;
 }
-.travelduckOnlineBookingModal .modal-body a:hover,
-.travelduckOnlineBookingModal .modal-body a:focus {
+.travelduck.onlineBookingModal .modal-body a:hover,
+.travelduck.onlineBookingModal .modal-body a:focus {
   color: #FF5426;
   text-decoration: underline;
 }
-.travelduckOnlineBookingModal .modal-body a:focus {
+.travelduck.onlineBookingModal .modal-body a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -282,18 +248,18 @@
 
 
 
-.travelduckOnlineBookingModal .booking-display {
+.travelduck.onlineBookingModal .booking-display {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:300;
 }
 
 
-.travelduckOnlineBookingModal .price-display {
+.travelduck.onlineBookingModal .price-display {
   text-align: center;
 }
 
-.travelduckOnlineBookingModal .contact-owner .title,
-.travelduckOnlineBookingModal .price-display .text {
+.travelduck.onlineBookingModal .contact-owner .title,
+.travelduck.onlineBookingModal .price-display .text {
   color: #949494;
   text-transform: uppercase;
   font-size: 17px;
@@ -301,29 +267,15 @@
   font-weight: 300;
 }
 
-.travelduckOnlineBookingModal .price-display .price {
+.travelduck.onlineBookingModal .price-display .price {
   color: #5d5d5d;
   font-size: 28px;
   padding: 5px 0;
 }
 
-.travelduckOnlineBookingModal .price-display .button {
-  background-color: #FFD11C;
-  display: inline-block;
-  padding: 10px;
-  border-radius: 4px;
-  margin-top: 5px;
-  cursor: pointer;
-}
 
-.travelduckOnlineBookingModal .price-display .button:hover {
-  color:#fff;
-}
-
-
-
-.travelduckOnlineBookingModal .contact-owner,
-.travelduckOnlineBookingModal .price-display {
+.travelduck.onlineBookingModal .contact-owner,
+.travelduck.onlineBookingModal .price-display {
   padding:20px 0;
 }
 
@@ -331,7 +283,7 @@
 
 
 
-.travelduckOnlineBookingModal .booking-display-wrapper {
+.travelduck.onlineBookingModal .booking-display-wrapper {
   overflow: hidden;
   position: relative;
   margin: 20px -20px;
@@ -339,7 +291,7 @@
   background-color: #fcfcfc;
 }
 
-.travelduckOnlineBookingModal .booking-display:before {
+.travelduck.onlineBookingModal .booking-display:before {
   box-shadow: 0 0 10px rgba(0,0,0,0.6);
   content: ' ';
   height: 10px;
@@ -350,7 +302,7 @@
   border-radius: 0 0 200% 200%;
 }
 
-.travelduckOnlineBookingModal .booking-display:after {
+.travelduck.onlineBookingModal .booking-display:after {
   box-shadow: 0 0 10px rgba(0,0,0,0.6);
   content: ' ';
   height: 10px;
@@ -361,49 +313,35 @@
   border-radius: 200% 200% 0 0;
 }
 
-.travelduckOnlineBookingModal .loading-price {
+.travelduck.onlineBookingModal .loading-price {
   padding: 20px 0;
   text-align: center;
 }
 
 
-.travelduckOnlineBookingModal .loading-price .text {
+.travelduck.onlineBookingModal .loading-price .text {
   color: #949494;
   font-size: 17px;
 }
 
-.travelduckOnlineBookingModal .loading-price img {
+.travelduck.onlineBookingModal .loading-price img {
   margin-top: 20px;
 }
 
 
-.travelduckOnlineBookingModal .img-round {
+.travelduck.onlineBookingModal .img-round {
   border-radius:50%;
   padding: 3px;
   border: 1px solid #ccc;
 }
 
 
-.travelduckOnlineBookingModal .book-online-btn {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 8px 12px;
-  background-color: #FFD11C;
+
+.travelduck.onlineBookingModal .reset-btn {
+  float: right;
+  padding: 10px 10px 7px 10px;
 }
 
-.travelduckOnlineBookingModal .book-online-btn:hover {
-  color:#fff;
+.travelduck.onlineBookingModal .price-display .btn {
+  margin-top: 5px;
 }
