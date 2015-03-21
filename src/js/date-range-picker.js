@@ -45,14 +45,14 @@
    * @param methodOrOptions
    * @returns {*}
    */
-  $.fn.gaDateRangePicker = function(methodOrOptions) {
+  $.fn.travelduckDateRangePicker = function(methodOrOptions) {
 
     if(methods[methodOrOptions]) {
       return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
     } else if(typeof methodOrOptions === "object" || !methodOrOptions) {
       return methods.init.apply( this, arguments );
     } else {
-      $.error("Method " +  methodOrOptions + " does not exist on jQuery.gaDateRangePicker");
+      $.error("Method " +  methodOrOptions + " does not exist on jQuery.travelduckDateRangePicker");
     }
   };
 
@@ -79,7 +79,7 @@
 
     var checkin = $(startDateInput).prop(
       "readonly", true
-    ).gaDatePicker({
+    ).travelduckDatePicker({
 
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date), SELECTSTART);
@@ -93,34 +93,34 @@
 
     }).on("focus", function(e) {
 
-      checkout.gaDatePicker("hide");
+      checkout.travelduckDatePicker("hide");
 
     }).on("changeDate", function(e) {
       setSelectedStartDayFromDate(e.date);
 
-      //checkout.gaDatePicker("setValue", e.date);
+      //checkout.travelduckDatePicker("setValue", e.date);
 
-      checkin.gaDatePicker("update");
-      checkout.gaDatePicker("update");
+      checkin.travelduckDatePicker("update");
+      checkout.travelduckDatePicker("update");
 
-      checkin.gaDatePicker("hide");
+      checkin.travelduckDatePicker("hide");
 
       if(!checkout.val()) {
-        checkout.gaDatePicker("setViewDate", e.date);
+        checkout.travelduckDatePicker("setViewDate", e.date);
       }
 
       checkout.focus();
-      checkout.gaDatePicker("render");
+      checkout.travelduckDatePicker("render");
 
       //loadPrice();
     }).on("hoverDate", function(e) {
 
       setSelectedStartDayFromDate(e.date);
-      checkin.gaDatePicker("render");
+      checkin.travelduckDatePicker("render");
 
     }).on("mousedown", function(e) {
 
-      checkin.gaDatePicker("show");
+      checkin.travelduckDatePicker("show");
 
     }).on("clear", function() {
 
@@ -135,7 +135,7 @@
 
     var checkout = $(endDateInput).prop(
       "readonly", true
-    ).gaDatePicker({
+    ).travelduckDatePicker({
 
       onRender: function(date) {
         var classes = generateClasses(CalendarDay.fromDate(date), SELECTEND);
@@ -150,21 +150,21 @@
 
     }).on("focus", function(e) {
 
-      checkin.gaDatePicker("hide");
+      checkin.travelduckDatePicker("hide");
 
       if(!checkin.val()) {
         clear();
-        checkout.gaDatePicker("hide");
+        checkout.travelduckDatePicker("hide");
         checkin.focus();
       }
 
     }).on('changeDate', function(e) {
       setSelectedEndDayFromDate(e.date);
 
-      checkin.gaDatePicker("update");
-      checkout.gaDatePicker("update");
+      checkin.travelduckDatePicker("update");
+      checkout.travelduckDatePicker("update");
 
-      //checkout.gaDatePicker("hide");
+      //checkout.travelduckDatePicker("hide");
       checkout.blur();
 
       //loadPrice();
@@ -177,7 +177,7 @@
     }).on("hoverDate", function(e) {
 
       setSelectedEndDayFromDate(e.date);
-      checkout.gaDatePicker("render");
+      checkout.travelduckDatePicker("render");
 
     }).on("clear", function() {
 
@@ -196,8 +196,8 @@
     selectedStartDay = null;
     selectedEndDay = null;
 
-    $(settings.startDateInput).val("").gaDatePicker("update");
-    $(settings.endDateInput).val("").gaDatePicker("update");
+    $(settings.startDateInput).val("").travelduckDatePicker("update");
+    $(settings.endDateInput).val("").travelduckDatePicker("update");
 
   }
 

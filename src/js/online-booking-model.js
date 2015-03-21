@@ -80,7 +80,7 @@
    * @param methodOrOptions
    * @returns {*}
    */
-  $.fn.gaOnlineBookingModal = function(methodOrOptions) {
+  $.fn.travelduckOnlineBookingModal = function(methodOrOptions) {
 
     if(methods[methodOrOptions]) {
       return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
@@ -104,10 +104,10 @@
   /**
    * Get the property this online booking widget is for.
    *
-   * @returns {GetAway_Property}
+   * @returns {TravelDuck_Property}
    */
   function property() {
-    return new GetAway_Property($(displayElement).data("property-id"));
+    return new TravelDuck_Property($(displayElement).data("property-id"));
   }
 
 
@@ -133,7 +133,7 @@
         "<div class=\"booking-display\">" +
         "<div class=\"loading-price\">" +
         "<div class=\"text\">Doing the maths...</div>" +
-        "<img src=\"https://get-away.com/common/img/loading.gif\" />" +
+        "<img src=\"https://travelduck.co/common/img/loading.gif\" />" +
         "</div>" +
         "<div class=\"price-display\">" +
         "<div class=\"text\">Book now from:</div>" +
@@ -141,7 +141,7 @@
         "<div class=\"button\">Book now</div>" +
         "</div>" +
         "<div class=\"contact-owner\">" +
-        "<div class=\"title\">Contact us for a quote</div>" +
+        "<div class=\"title\" style='text-align: center'>Contact us for a quote</div>" +
         "<div class=\"text\">" +
         "" +
         "</div>" +
@@ -152,12 +152,12 @@
         "<table>" +
         "<tr>" +
         "<td style=\"width:80px\">" +
-        "<img class=\"img-round\" style=\"width:100%\" src=\"https://get-away.com/get-away/img/logo-square.png\" />" +
+        "<img class=\"img-round\" style=\"width:100%\" src=\"https://travelduck.co/get-away/img/logo-square.png\" />" +
         "</td>" +
         "<td>" +
         "<ul class=\"fa-ul\">" +
         "<li class=\"fa fa-check\"><span>Book directly with owner</span></li>" +
-        "<li class=\"fa fa-check\"><span>Secured by <a target=\"_blank\" href=\"https://get-away.com\">Get Away</a></span></li>" +
+        "<li class=\"fa fa-check\"><span>Secured by <a target=\"_blank\" href=\"https://travelduck.co\">TravelDuck</a></span></li>" +
         "<li class=\"fa fa-check\"><span>Credit / debit card payment</span></li>" +
         "<li class=\"fa fa-check\"><span>No booking fee</span></li>" +
         "</ul>" +
@@ -202,7 +202,7 @@
 
     $(bookingPriceDisplayBookButton).click(function() {
       var calendarDayRange = new CalendarDayRange(startCalendarDay, endCalendarDay);
-      var request = new GetAway_Property_Booking_Request(property(), calendarDayRange);
+      var request = new TravelDuck_Property_Booking_Request(property(), calendarDayRange);
       request.submit(function(response) {
         window.location.href = response["url"];
       });
@@ -215,7 +215,7 @@
    * Setup the date pickers.
    */
   function setupDatePickers() {
-    var checkin = $(startDateInput).gaDatePicker({
+    var checkin = $(startDateInput).travelduckDatePicker({
       todayBtn: true,
       onRender: function(date) {
         var classes = [];
@@ -228,19 +228,19 @@
     }).on('changeDate', function(e) {
       setStartCalendarDay(e.date);
 
-      checkout.gaDatePicker("setValue", e.date);
+      checkout.travelduckDatePicker("setValue", e.date);
 
-      checkin.gaDatePicker("update");
-      checkout.gaDatePicker("update");
+      checkin.travelduckDatePicker("update");
+      checkout.travelduckDatePicker("update");
 
-      checkin.gaDatePicker("hide");
+      checkin.travelduckDatePicker("hide");
       checkout.focus();
 
       loadPrice();
     });
 
 
-    var checkout = $(endDateInput).gaDatePicker({
+    var checkout = $(endDateInput).travelduckDatePicker({
       onRender: function(date) {
         var classes = [];
 
@@ -252,10 +252,10 @@
     }).on('changeDate', function(e) {
       setEndCalendarDay(e.date);
 
-      checkin.gaDatePicker("update");
-      checkout.gaDatePicker("update");
+      checkin.travelduckDatePicker("update");
+      checkout.travelduckDatePicker("update");
 
-      checkout.gaDatePicker("hide");
+      checkout.travelduckDatePicker("hide");
 
       loadPrice();
     });
@@ -345,8 +345,8 @@
     afterStartCalendarDayLimit = null;
     beforeEndCalendarDayLimit = null;
 
-    $(startDateInput).val("").gaDatePicker("update");
-    $(endDateInput).val("").gaDatePicker("update");
+    $(startDateInput).val("").travelduckDatePicker("update");
+    $(endDateInput).val("").travelduckDatePicker("update");
 
     loadPrice();
   }

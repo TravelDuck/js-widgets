@@ -66,14 +66,14 @@
    * @param methodOrOptions
    * @returns {*}
    */
-  $.fn.gaAvailability = function(methodOrOptions) {
+  $.fn.travelduckAvailability = function(methodOrOptions) {
 
     if(methods[methodOrOptions]) {
       return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
     } else if(typeof methodOrOptions === "object" || !methodOrOptions) {
       return methods.init.apply( this, arguments );
     } else {
-      $.error("Method " +  methodOrOptions + " does not exist on jQuery.gaAvailability");
+      $.error("Method " +  methodOrOptions + " does not exist on jQuery.travelduckAvailability");
     }
   };
 
@@ -81,10 +81,10 @@
   /**
    * Get the Property to display the availability of.
    *
-   * @returns {GetAway_Property}
+   * @returns {TravelDuck_Property}
    */
   function property() {
-    return new GetAway_Property($(displayElement).data("property-id"));
+    return new TravelDuck_Property($(displayElement).data("property-id"));
   }
 
 
@@ -176,7 +176,7 @@
       var unknownToUnavailable = availability.unknownToUnavailable;
       var unknownToUnknown = availability.unknownToUnknown;
 
-      $(".gaAvailability .day").each(function() {
+      $(".travelduckAvailability .day").each(function() {
         $(this).removeClass("available-to-available available-to-unavailable available-to-unknown");
       });
 

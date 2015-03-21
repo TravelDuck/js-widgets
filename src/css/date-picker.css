@@ -1,15 +1,15 @@
 /*
  * Available to ....
  */
-.gaDatePicker td.day.available-to-available,
-.gaDatePicker td.day.available-to-available.disabled:hover,
-.gaAvailability .day.available-to-available {
+.travelduckDatePicker td.day.available-to-available,
+.travelduckDatePicker td.day.available-to-available.disabled:hover,
+.travelduckAvailability .day.available-to-available {
   background: #A4D61E;
 }
 
-.gaDatePicker td.day.available-to-unavailable,
-.gaDatePicker td.day.available-to-unavailable.disabled:hover,
-.gaAvailability .day.available-to-unavailable {
+.travelduckDatePicker td.day.available-to-unavailable,
+.travelduckDatePicker td.day.available-to-unavailable.disabled:hover,
+.travelduckAvailability .day.available-to-unavailable {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, #C65A5A 51%, #C65A5A 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #A4D61E), color-stop(50%, #A4D61E), color-stop(51%, #C65A5A), color-stop(100%, #C65A5A));
@@ -20,9 +20,9 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4D61E', endColorstr='#C65A5A', GradientType=1);
 }
 
-.gaDatePicker td.day.available-to-unknown,
-.gaDatePicker td.day.available-to-unknown.disabled:hover,
-.gaAvailability .day.available-to-unknown {
+.travelduckDatePicker td.day.available-to-unknown,
+.travelduckDatePicker td.day.available-to-unknown.disabled:hover,
+.travelduckAvailability .day.available-to-unknown {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, #A4D61E 0%, #A4D61E 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #A4D61E), color-stop(50%, #A4D61E), color-stop(51%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
@@ -36,9 +36,9 @@
 /*
  * Unavailable to ....
  */
-.gaDatePicker td.day.unavailable-to-available,
-.gaDatePicker td.day.unavailable-to-available.disabled:hover,
-.gaAvailability .day.unavailable-to-available {
+.travelduckDatePicker td.day.unavailable-to-available,
+.travelduckDatePicker td.day.unavailable-to-available.disabled:hover,
+.travelduckAvailability .day.unavailable-to-available {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 49%, #A4D61E 50%, #A4D61E 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #C65A5A), color-stop(49%, #C65A5A), color-stop(50%, #A4D61E), color-stop(100%, #A4D61E));
@@ -50,15 +50,15 @@
 }
 
 
-.gaDatePicker td.day.unavailable-to-unavailable,
-.gaDatePicker td.day.unavailable-to-unavailable.disabled:hover,
-.gaAvailability .day.unavailable-to-unavailable {
+.travelduckDatePicker td.day.unavailable-to-unavailable,
+.travelduckDatePicker td.day.unavailable-to-unavailable.disabled:hover,
+.travelduckAvailability .day.unavailable-to-unavailable {
   background: #C65A5A;
 }
 
-.gaDatePicker td.day.unavailable-to-unknown,
-.gaDatePicker td.day.unavailable-to-unknown.disabled:hover,
-.gaAvailability .day.unavailable-to-unknown {
+.travelduckDatePicker td.day.unavailable-to-unknown,
+.travelduckDatePicker td.day.unavailable-to-unknown.disabled:hover,
+.travelduckAvailability .day.unavailable-to-unknown {
   background: #C65A5A;
   background: -moz-linear-gradient(-45deg, #C65A5A 0%, #C65A5A 50%, rgba(238, 238, 238, 1) 51%, rgba(238, 238, 238, 1) 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #C65A5A), color-stop(50%, #C65A5A), color-stop(51%, rgba(238, 238, 238, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
@@ -75,9 +75,9 @@
 /*
  * Unknown to ....
  */
-.gaDatePicker td.day.unknown-to-available,
-.gaDatePicker td.day.unknown-to-available.disabled:hover,
-.gaAvailability .day.unknown-to-available {
+.travelduckDatePicker td.day.unknown-to-available,
+.travelduckDatePicker td.day.unknown-to-available.disabled:hover,
+.travelduckAvailability .day.unknown-to-available {
   background: #A4D61E;
   background: -moz-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #A4D61E 50%, #A4D61E 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(49%, rgba(238, 238, 238, 1)), color-stop(50%, #A4D61E), color-stop(100%, #A4D61E));
@@ -88,9 +88,9 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b6efa1', GradientType=1);
 }
 
-.gaDatePicker td.day.unknown-to-unavailable,
-.gaDatePicker td.day.unknown-to-unavailable.disabled:hover,
-.gaAvailability .day.unknown-to-unavailable {
+.travelduckDatePicker td.day.unknown-to-unavailable,
+.travelduckDatePicker td.day.unknown-to-unavailable.disabled:hover,
+.travelduckAvailability .day.unknown-to-unavailable {
   background: #C65A5A;
   background: -moz-linear-gradient(-45deg, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 49%, #C65A5A 50%, #C65A5A 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 238, 238, 1)), color-stop(49%, rgba(238, 238, 238, 1)), color-stop(50%, #C65A5A), color-stop(100%, #C65A5A));
@@ -101,15 +101,15 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#C65A5A', GradientType=1);
 }
 
-.gaDatePicker td.day.unknown-to-unknown,
-.gaDatePicker td.day.unknown-to-unknown.disabled:hover,
-.gaAvailability .day.unknown-to-unknown {
+.travelduckDatePicker td.day.unknown-to-unknown,
+.travelduckDatePicker td.day.unknown-to-unknown.disabled:hover,
+.travelduckAvailability .day.unknown-to-unknown {
   background: #eee;
 }
 
 
 
-.gaDatePicker {
+.travelduckDatePicker {
   top: 0;
   left: 0;
   padding: 4px;
@@ -122,7 +122,7 @@
   }*/
 
 }
-.gaDatePicker.place-left:before {
+.travelduckDatePicker.place-left:before {
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
@@ -134,7 +134,7 @@
   left: 6px;
 }
 
-.gaDatePicker.place-left:after {
+.travelduckDatePicker.place-left:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;
@@ -145,7 +145,7 @@
   left: 7px;
 }
 
-.gaDatePicker.place-right:before {
+.travelduckDatePicker.place-right:before {
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
@@ -157,7 +157,7 @@
   right: 6px;
 }
 
-.gaDatePicker.place-right:after {
+.travelduckDatePicker.place-right:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;
@@ -168,16 +168,16 @@
   right: 7px;
 }
 
-.gaDatePicker > div {
+.travelduckDatePicker > div {
   display: none;
 }
-.gaDatePicker table {
+.travelduckDatePicker table {
   width: 100%;
   margin: 0;
   border-spacing:0;
 }
-.gaDatePicker td,
-.gaDatePicker th {
+.travelduckDatePicker td,
+.travelduckDatePicker th {
   text-align: center;
   width: 20px;
   height: 20px;
@@ -185,32 +185,32 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.gaDatePicker th.switch {
+.travelduckDatePicker th.switch {
   width: 145px;
 }
-.gaDatePicker th.next,
-.gaDatePicker th.prev {
+.travelduckDatePicker th.next,
+.travelduckDatePicker th.prev {
   font-size: 21px;
 }
-.gaDatePicker thead tr:first-child th {
+.travelduckDatePicker thead tr:first-child th {
   cursor: pointer;
 }
-.gaDatePicker thead tr:first-child th:hover {
+.travelduckDatePicker thead tr:first-child th:hover {
   background: #eeeeee;
 }
 
 
 
-.gaDatePicker {
+.travelduckDatePicker {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.gaDatePicker td.day.disabled {
+.travelduckDatePicker td.day.disabled {
   text-decoration:line-through;
   cursor: not-allowed;
 }
 
-.gaDatePicker td.day {
+.travelduckDatePicker td.day {
   cursor: pointer;
   border-radius: 0;
   margin: 0;
@@ -224,7 +224,7 @@
 
 
 @media(max-width:768px) {
-  .gaDatePicker td.day {
+  .travelduckDatePicker td.day {
     width:28px !important;
     height:28px !important;
     padding:3px !important;
@@ -236,13 +236,13 @@
 
 
 
-.gaDatePicker td.day.new,
-.gaDatePicker td.day.old {
+.travelduckDatePicker td.day.new,
+.travelduckDatePicker td.day.old {
   opacity: 0.6;
 }
 
-.gaDatePicker td.day.start-date,
-.gaDatePicker td.day.end-date {
+.travelduckDatePicker td.day.start-date,
+.travelduckDatePicker td.day.end-date {
   width: 30px;
   height: 31px;
   background: #0098FE !important;
@@ -252,14 +252,14 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-.gaDatePicker td.day.selected-date {
+.travelduckDatePicker td.day.selected-date {
   background-color: #ccc !important;
 }
 
-.gaDatePicker td.day.start-date:after,
-.gaDatePicker td.day.start-date:before,
-.gaDatePicker td.day.end-date:after,
-.gaDatePicker td.day.end-date:before {
+.travelduckDatePicker td.day.start-date:after,
+.travelduckDatePicker td.day.start-date:before,
+.travelduckDatePicker td.day.end-date:after,
+.travelduckDatePicker td.day.end-date:before {
   content: '';
   position: absolute;
   width: 0;
@@ -267,28 +267,28 @@
   border-style: solid;
 }
 
-.gaDatePicker td.day.start-date:after {
+.travelduckDatePicker td.day.start-date:after {
   bottom: 0;
   right: 0;
   border-width: 0 0 16px 8px;
   border-color: transparent transparent #ccc transparent;
 }
 
-.gaDatePicker td.day.start-date:before {
+.travelduckDatePicker td.day.start-date:before {
   top: 0;
   right: 0;
   border-width: 0 8px 16px 0;
   border-color: transparent #ccc transparent transparent;
 }
 
-.gaDatePicker td.day.end-date:after {
+.travelduckDatePicker td.day.end-date:after {
   top: 0;
   left: 0;
   border-width: 16px 8px 0 0;
   border-color: #ccc transparent transparent transparent;
 }
 
-.gaDatePicker td.day.end-date:before {
+.travelduckDatePicker td.day.end-date:before {
   bottom: 0;
   left: 0;
   border-width: 16px 0 0 8px;
@@ -298,7 +298,7 @@
 
 
 
-.gaDatePicker.dropdown-menu {
+.travelduckDatePicker.dropdown-menu {
   position:absolute;
   top:100%;
   left:0;
@@ -318,29 +318,29 @@
   box-shadow:0 6px 12px rgba(0, 0, 0, .175);
   background-clip:padding-box
 }
-.gaDatePicker.dropdown-menu.pull-right {
+.travelduckDatePicker.dropdown-menu.pull-right {
   right:0;
   left:auto
 }
-.gaDatePicker.dropdown-menu .divider {height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}
-.gaDatePicker.dropdown-menu>li>a {display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#333;white-space:nowrap}
-.gaDatePicker.dropdown-menu>li>a:hover,
-.gaDatePicker.dropdown-menu>li>a:focus {
+.travelduckDatePicker.dropdown-menu .divider {height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}
+.travelduckDatePicker.dropdown-menu>li>a {display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#333;white-space:nowrap}
+.travelduckDatePicker.dropdown-menu>li>a:hover,
+.travelduckDatePicker.dropdown-menu>li>a:focus {
   text-decoration:none;color:#262626;background-color:#f5f5f5
 }
-.gaDatePicker.dropdown-menu>.active>a,
-.gaDatePicker.dropdown-menu>.active>a:hover,
-.gaDatePicker.dropdown-menu>.active>a:focus{
+.travelduckDatePicker.dropdown-menu>.active>a,
+.travelduckDatePicker.dropdown-menu>.active>a:hover,
+.travelduckDatePicker.dropdown-menu>.active>a:focus{
   color:#fff;text-decoration:none;outline:0;background-color:#428bca
 }
-.gaDatePicker.dropdown-menu > .disabled > a,
-.gaDatePicker.dropdown-menu > .disabled > a:hover,
-.gaDatePicker.dropdown-menu > .disabled > a:focus {
+.travelduckDatePicker.dropdown-menu > .disabled > a,
+.travelduckDatePicker.dropdown-menu > .disabled > a:hover,
+.travelduckDatePicker.dropdown-menu > .disabled > a:focus {
   color:#999
 }
 
-.gaDatePicker.dropdown-menu > .disabled > a:hover,
-.gaDatePicker.dropdown-menu > .disabled > a:focus {
+.travelduckDatePicker.dropdown-menu > .disabled > a:hover,
+.travelduckDatePicker.dropdown-menu > .disabled > a:focus {
   text-decoration:none;
   background-color:transparent;background-image:none;
   filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
@@ -349,22 +349,22 @@
 
 
 
-.gaDatePicker.dropdown-menu-right {left:auto;right:0}
+.travelduckDatePicker.dropdown-menu-right {left:auto;right:0}
 
-.gaDatePicker.dropdown-menu-left {left:0;right:auto}
+.travelduckDatePicker.dropdown-menu-left {left:0;right:auto}
 
-.gaDatePicker.dropdown-header {display:block;padding:3px 20px;font-size:12px;line-height:1.428571429;color:#999}
+.travelduckDatePicker.dropdown-header {display:block;padding:3px 20px;font-size:12px;line-height:1.428571429;color:#999}
 
-.gaDatePicker.dropdown-backdrop {position:fixed;left:0;right:0;bottom:0;top:0;z-index:1990}
+.travelduckDatePicker.dropdown-backdrop {position:fixed;left:0;right:0;bottom:0;top:0;z-index:1990}
 
 
-.gaDatePicker .dropup .caret {
+.travelduckDatePicker .dropup .caret {
   border-top:0;
   border-bottom:4px solid;
   content:""
 }
 
-.gaDatePicker .dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu {
+.travelduckDatePicker .dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu {
   top:auto;
   bottom:100%;
   margin-bottom:1px
@@ -374,15 +374,15 @@
 /*
  * Clear btn
  */
-.gaDatePicker .clear-btn-wrapper {
+.travelduckDatePicker .clear-btn-wrapper {
   text-align: right;
 }
 
-.gaDatePicker .clear-btn-wrapper > .clear-btn {
+.travelduckDatePicker .clear-btn-wrapper > .clear-btn {
   padding-right: 10px;
   cursor: pointer;
 }
 
-.gaDatePicker .clear-btn-wrapper > .clear-btn:hover {
+.travelduckDatePicker .clear-btn-wrapper > .clear-btn:hover {
   text-decoration: underline;
 }

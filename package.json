@@ -1,25 +1,24 @@
 {
-  "name": "getaway-widgets",
+  "name": "travelduck-widgets",
   "authors": [
-    "Colin Stannard <colin.stannard@get-away.com>"
+    "Colin Stannard <colin.stannard@travelduck.co>"
   ],
-  "description": "Widgets for use with get-away.com (travel provider)",
+  "description": "Widgets for use with travelduck.co (travel provider)",
   "main": "dist/widgets.js",
   "moduleType": [
     "globals"
   ],
   "keywords": [
-    "get-away",
-    "GetAway",
-    "Get Away",
+    "travel duck",
+    "TravelDuck",
     "Travel"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/get-away/js-widgets.git"
+    "url": "https://github.com/TravelDuck/js-widgets.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/get-away/js-widgets",
+  "homepage": "https://github.com/TravelDuck/js-widgets",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -38,4 +37,3 @@
     "grunt-contrib-cssmin": "0.11.0"
   }
 }
-Gruntfile.js

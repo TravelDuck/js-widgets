@@ -1,23 +1,22 @@
 {
-  "name": "getaway-widgets",
+  "name": "travelduck-widgets",
   "authors": [
-    "Colin Stannard <colin.stannard@get-away.com>"
+    "Colin Stannard <colin.stannard@travelduck.co>"
   ],
-  "description": "Widgets for use with get-away.com (travel provider)",
+  "description": "Widgets for use with travelduck.co (travel provider)",
   "main": "dist/widgets.js",
   "moduleType": [
     "globals"
   ],
   "keywords": [
-    "get-away",
-    "GetAway",
-    "Get Away",
+    "travel duck",
+    "Travel Duck",
     "Travel"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/get-away/js-widgets",
+  "homepage": "https://github.com/TravelDuck/js-widgets",
   "dependencies": {
-    "getaway-models": "1.0.*",
+    "travelduck-models": "*",
     "jquery": "1.11.1",
     "bootstrap": "3.3.1",
     "fontawesome": ">=4.2.0"

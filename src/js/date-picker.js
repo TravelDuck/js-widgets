@@ -81,7 +81,7 @@ var Datepicker = function(element, options){
   //
   var that = this;
   $(document).on('mousedown', function(ev) {
-    if($(ev.target).closest('.gaDatePicker').length == 0 && ev.target != element) {
+    if($(ev.target).closest('.travelduckDatePicker').length == 0 && ev.target != element) {
       that.hide();
     }
   });
@@ -442,25 +442,25 @@ Datepicker.prototype = {
   }
 };
 
-$.fn.gaDatePicker = function ( option, val ) {
+$.fn.travelduckDatePicker = function ( option, val ) {
   return this.each(function () {
     var $this = $(this),
       data = $this.data('datepicker'),
       options = typeof option === 'object' && option;
     if (!data) {
-      $this.data('datepicker', (data = new Datepicker(this, $.extend({}, $.fn.gaDatePicker.defaults, options))));
+      $this.data('datepicker', (data = new Datepicker(this, $.extend({}, $.fn.travelduckDatePicker.defaults, options))));
     }
     if (typeof option === 'string') data[option](val);
   });
 };
 
-$.fn.gaDatePicker.defaults = {
+$.fn.travelduckDatePicker.defaults = {
   onRender: function(date) {
     return '';
   },
   allowBeforeToday: true
 };
-$.fn.gaDatePicker.Constructor = Datepicker;
+$.fn.travelduckDatePicker.Constructor = Datepicker;
 
 var DPGlobal = {
   modes: [
@@ -562,7 +562,7 @@ var DPGlobal = {
     '</thead>',
   contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>'
 };
-DPGlobal.template = '<div class="gaDatePicker dropdown-menu">' +
+DPGlobal.template = '<div class="travelduckDatePicker dropdown-menu">' +
   '<div class="datepicker-days">' +
   '<table class="table-condensed">' +
   DPGlobal.headTemplate +
