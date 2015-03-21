@@ -141,12 +141,12 @@
 }
 .travelduck.onlineBookingModal .modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}
 .travelduck.onlineBookingModal .modal-header {
-  padding:15px;
-  border-bottom:1px solid #e5e5e5;
+  padding: 15px 15px 12px 15px;
   min-height:16.428571429px;
-  background-color:#FF5426;
+  background-color:#FF851B;
   border-radius: 4px 4px 0 0;
   color: #fff;
+  border-bottom: 3px solid #FF7701;
 }
 .travelduck.onlineBookingModal .modal-header h3 {
   font-family: "Roboto";
