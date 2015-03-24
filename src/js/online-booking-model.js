@@ -56,18 +56,24 @@
       displayElement.append(mainContainer);
 
 
-      initialiseModal();
+      property().readFromApi(function(property) {
 
-      hideBookingPrice(0);
-      hideLoadingBookingPrice(0);
-      hideContactOwnerBookingPrice(0);
+        initialiseModal();
 
-      disableDateSection();
-      loadColouredAvailability();
+        hideBookingPrice(0);
+        hideLoadingBookingPrice(0);
+        hideContactOwnerBookingPrice(0);
 
-      setInterval(function() {
+        disableDateSection();
         loadColouredAvailability();
-      }, 30000);
+
+        setInterval(function() {
+          loadColouredAvailability();
+        }, 30000);
+
+      }, function() {
+        console.error("");
+      });
 
       return this;
     }
@@ -107,12 +113,22 @@
    * @returns {TravelDuck_Property}
    */
   function property() {
-    return new TravelDuck_Property($(displayElement).data("property-id"));
+    if(!this.propertyModel) {
+      setProperty(new TravelDuck_Property($(displayElement).data("property-id")));
+    }
+    return this.propertyModel;
   }
 
 
+  function setProperty(property) {
+    this.propertyModel = property;
+  }
+
 
   function initialiseModal() {
+    var p = property();
+    var bookingMode = p.getBookingMode();
+
     $(mainContainer).append(
       "<div style=\"display:none\" class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">" +
         "<div class=\"modal-dialog\">" +
@@ -178,7 +194,8 @@
     $(modal).modal({show:false});
 
 
-    $(mainContainer).append("<button class=\"btn btn-secondary book-online-btn\">Book online</button>");
+    var buttonText = bookingMode == "live" ? "Book now" : "Request to book";
+    $(mainContainer).append("<button class=\"btn btn-secondary book-online-btn\">" + buttonText + "</button>");
     var bookOnlineButton = $(mainContainer).find(".book-online-btn");
     $(bookOnlineButton).click(function() {
       $(modal).modal('show')
@@ -217,6 +234,9 @@
    * Setup the date pickers.
    */
   function setupDatePickers() {
+    var changeOverDay = parseInt(property().getChangeOverDay().getNumber());
+    var format = "dd-mm-yyyy";
+
     var checkin = $(startDateInput).travelduckDatePicker({
       todayBtn: true,
       onRender: function(date) {
@@ -225,8 +245,8 @@
         classes = addColourClasses(CalendarDay.fromDate(date), colouring, classes, true);
         return classes.join(" ");
       },
-      format: "dd-mm-yyyy",
-      weekStart: 6
+      format: format,
+      weekStart: changeOverDay
     }).on('changeDate', function(e) {
       setStartCalendarDay(e.date);
 
@@ -249,8 +269,8 @@
         classes = addColourClasses(CalendarDay.fromDate(date), colouring, classes, false);
         return classes.join(" ");
       },
-      format: "dd-mm-yyyy",
-      weekStart: 6
+      format: format,
+      weekStart: changeOverDay
     }).on('changeDate', function(e) {
       setEndCalendarDay(e.date);
 
@@ -361,7 +381,7 @@
    * @param colouring
    * @param classes
    * @param selectStartDate
-   *  @returns {*}
+   * @returns {*}
    */
   function addColourClasses(calendarDay, colouring, classes, selectStartDate) {
 
