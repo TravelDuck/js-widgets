@@ -154,10 +154,11 @@
         "<div class=\"price-display\">" +
         "<div class=\"text\">Book now from:</div>" +
         "<div class=\"price\"></div>" +
-        "<div class=\"btn btn-secondary\">Book now</div>" +
+        "<div class=\"btn btn-secondary\">Book Now</div>" +
         "</div>" +
-        "<div class=\"contact-owner\">" +
-        "<div class=\"title\" style='text-align: center'>Contact us for a quote</div>" +
+        "<div class=\"contact-owner\" style=\"text-align: center\">" +
+        "<div class=\"title\">Request a price</div>" +
+        "<div class=\"btn btn-secondary\" style=\"margin-top:10px\">Book Now</div>" +
         "<div class=\"text\">" +
         "" +
         "</div>" +
@@ -212,22 +213,36 @@
     bookingPriceLoadingWrapper = $(mainContainer).find(".loading-price");
     bookingPriceContactOwnerWrapper = $(mainContainer).find(".contact-owner");
     var bookingPriceDisplayBookButton = $(mainContainer).find(".price-display .btn");
+    var bookingPriceContactOwnerButton = $(mainContainer).find(".contact-owner .btn");
 
     $(resetInputBtn).click(function() {
       resetDatePickers();
     });
 
 
-
     $(bookingPriceDisplayBookButton).click(function() {
-      var calendarDayRange = new CalendarDayRange(startCalendarDay, endCalendarDay);
-      var request = new TravelDuck_Property_Booking_Request(property(), calendarDayRange);
-      request.submit(function(response) {
-        window.location.href = response["url"];
-      });
+      submitBookingRequest(startCalendarDay, endCalendarDay);
+    });
+
+    $(bookingPriceContactOwnerButton).click(function() {
+      submitBookingRequest(startCalendarDay, endCalendarDay);
     });
   }
 
+
+  /**
+   * Submit a booking request for the given startDay and endDay.
+   *
+   * @param startDay
+   * @param endDay
+   */
+  function submitBookingRequest(startDay, endDay) {
+    var calendarDayRange = new CalendarDayRange(startDay, endDay);
+    var request = new TravelDuck_Property_Booking_Request(property(), calendarDayRange);
+    request.submit(function(response) {
+      window.location.href = response["url"];
+    });
+  }
 
 
   /**
