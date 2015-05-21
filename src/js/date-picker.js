@@ -19,6 +19,14 @@ var Datepicker = function(element, options){
       mouseover: $.proxy(this.mouseover, this)
     });
 
+
+  // Trigger mouse out when mouse leaves table body containing days.
+  var tableBody = this.picker.find("tbody");
+  tableBody.on({
+    mouseleave: $.proxy(this.mouseout, this)
+  });
+
+
   this.isInput = this.element.is('input');
   this.component = this.element.is('.date') ? this.element.find('.add-on') : false;
 
@@ -410,6 +418,7 @@ Datepicker.prototype = {
 
 
   mouseover: function(e) {
+
     e.stopPropagation();
     e.preventDefault();
 
@@ -438,6 +447,13 @@ Datepicker.prototype = {
       }
 
     }
+  },
+
+
+  mouseout: function(e) {
+    this.element.trigger({
+      type: 'exitDate'
+    });
   },
 
 

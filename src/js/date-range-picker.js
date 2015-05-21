@@ -143,6 +143,11 @@
       setSelectedStartDayFromDate(e.date);
       checkin.travelduckDatePicker("render");
 
+    }).on("exitDate", function(e) {
+
+      selectedStartDay = null;
+      checkin.travelduckDatePicker("render");
+
     }).on("mousedown", function(e) {
 
       checkin.travelduckDatePicker("show");
@@ -212,6 +217,11 @@
     }).on("hoverDate", function(e) {
 
       setSelectedEndDayFromDate(e.date);
+      checkout.travelduckDatePicker("render");
+
+    }).on("exitDate", function(e) {
+
+      selectedEndDay = null;
       checkout.travelduckDatePicker("render");
 
     }).on("clear", function() {
