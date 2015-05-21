@@ -24,13 +24,29 @@
 
         // Default display options
         format: "dd-mm-yyyy",
-        weekStart: 6
+        weekStart: 6,
+
+        // Colouring functions
+        startDatepickerOnRender: function(calendarDay) {},
+        endDatepickerOnRender: function(calendarDay) {},
+
+        // Change events
+        onChangeStartDate: function(calendarDay) {},
+        onChangeEndDate: function(calendarDay) {},
+        onChangeDateRange: function(selectedDateRange) {},
+
+        // Clear event
+        onClear: function() {}
 
       }, options);
 
       setupDatePickers();
 
       return this;
+    },
+
+    selectedDateRange: function() {
+      return selectedDateRange();
     },
 
     clear: function() {
@@ -82,7 +98,16 @@
     ).travelduckDatePicker({
 
       onRender: function(date) {
-        var classes = generateClasses(CalendarDay.fromDate(date), SELECTSTART);
+        var calendarDay = CalendarDay.fromDate(date);
+
+        var classes = generateClasses(calendarDay, SELECTSTART);
+
+        // Fire (optionally) user defined start datepicker render function - allows custom colouring.
+        var additionalClasses = settings.startDatepickerOnRender(calendarDay);
+        if(additionalClasses) {
+          classes = $.merge(classes, additionalClasses);
+        }
+
         return classes.join(" ");
       },
 
@@ -98,7 +123,7 @@
     }).on("changeDate", function(e) {
       setSelectedStartDayFromDate(e.date);
 
-      //checkout.travelduckDatePicker("setValue", e.date);
+      triggerEventStartDateChanged();
 
       checkin.travelduckDatePicker("update");
       checkout.travelduckDatePicker("update");
@@ -138,7 +163,15 @@
     ).travelduckDatePicker({
 
       onRender: function(date) {
-        var classes = generateClasses(CalendarDay.fromDate(date), SELECTEND);
+        var calendarDay = CalendarDay.fromDate(date);
+        var classes = generateClasses(calendarDay, SELECTEND);
+
+        // Fire (optionally) user defined end datepicker render function - allows custom colouring.
+        var additionalClasses = settings.endDatepickerOnRender(calendarDay);
+        if(additionalClasses) {
+          classes = $.merge(classes, additionalClasses);
+        }
+
         return classes.join(" ");
       },
 
@@ -160,6 +193,8 @@
 
     }).on('changeDate', function(e) {
       setSelectedEndDayFromDate(e.date);
+
+      triggerEventEndDateChanged();
 
       checkin.travelduckDatePicker("update");
       checkout.travelduckDatePicker("update");
@@ -199,6 +234,7 @@
     $(settings.startDateInput).val("").travelduckDatePicker("update");
     $(settings.endDateInput).val("").travelduckDatePicker("update");
 
+    triggerEventClear();
   }
 
 
@@ -218,6 +254,23 @@
   function setSelectedEndDayFromDate(endDate) {
     selectedEndDay = CalendarDay.fromDate(endDate);
   }
+
+
+  /**
+   * Get the selected CalendarDayRange.
+   *
+   * @returns {CalendarDayRange|null}
+   */
+  function selectedDateRange() {
+    if(selectedStartDay && selectedEndDay) {
+      return new CalendarDayRange(selectedStartDay, selectedEndDay);
+    } else {
+      return null;
+    }
+  }
+
+
+
 
 
 
@@ -265,6 +318,31 @@
 
 
 
+
+
+
+  function triggerEventStartDateChanged() {
+    settings.onChangeStartDate(selectedStartDay);
+    triggerEventDateRangeChanged();
+  }
+
+
+  function triggerEventEndDateChanged() {
+    settings.onChangeEndDate(selectedEndDay);
+    triggerEventDateRangeChanged();
+  }
+
+
+  function triggerEventDateRangeChanged() {
+    settings.onChangeDateRange(selectedDateRange());
+  }
+
+
+
+
+  function triggerEventClear() {
+    settings.onClear();
+  }
 
 
 

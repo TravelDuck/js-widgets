@@ -93,7 +93,7 @@
     } else if(typeof methodOrOptions === "object" || !methodOrOptions) {
       return methods.init.apply( this, arguments );
     } else {
-      $.error("Method " +  methodOrOptions + " does not exist on jQuery.availabilityWidget");
+      $.error("Method " +  methodOrOptions + " does not exist on jQuery.travelduckOnlineBookingModal");
     }
   };
 

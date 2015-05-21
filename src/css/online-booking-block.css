@@ -1,0 +1,159 @@
+.travelduck.onlineBookingBlock .input-append.date .add-on i,
+.travelduck.onlineBookingBlock .input-prepend.date .add-on i {
+  display: block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+
+
+
+.travelduck.onlineBookingBlock .booking-price-display {
+  position: relative;
+}
+
+.travelduck.onlineBookingBlock .booking-price-display .text:before {
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  content: ' ';
+  height: 10px;
+  top: -10px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 0 0 200% 200%;
+}
+
+
+
+
+
+
+.travelduck.onlineBookingBlock {
+
+}
+
+
+
+.travelduck.onlineBookingBlock .datepicker-inputs:after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
+
+.travelduck.onlineBookingBlock .datepicker-wrapper {
+  display: block;
+}
+
+
+
+.travelduck.onlineBookingBlock .inputs-wrapper {
+  margin: 0 -5px;
+  display: block;
+}
+
+.travelduck.onlineBookingBlock .inputs-wrapper:after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
+
+.travelduck.onlineBookingBlock .col50 input {
+  width: 100%;
+  padding: 6px 6px;
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.travelduck.onlineBookingBlock {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:300;
+}
+
+
+.travelduck.onlineBookingBlock .price-display {
+  text-align: center;
+}
+
+.travelduck.onlineBookingBlock .contact-owner .title,
+.travelduck.onlineBookingBlock .price-display .text {
+  color: #949494;
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.travelduck.onlineBookingBlock .price-display .price {
+  color: #5d5d5d;
+  font-size: 28px;
+  padding: 5px 0;
+}
+
+
+.travelduck.onlineBookingBlock .contact-owner,
+.travelduck.onlineBookingBlock .price-display {
+  padding:20px 0;
+}
+
+
+
+
+
+.travelduck.onlineBookingBlock .booking-display-wrapper {
+  overflow: hidden;
+  position: relative;
+  margin: 20px -20px;
+  padding: 0 20px;
+  background-color: #fcfcfc;
+}
+
+
+.travelduck.onlineBookingBlock .loading-price {
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+.travelduck.onlineBookingBlock .loading-price .text {
+  color: #949494;
+  font-size: 17px;
+}
+
+
+.travelduck.onlineBookingBlock .button-wrapper .btn {
+  display: block;
+}
+
+
+
+
+.travelduck.onlineBookingBlock .secured-by-wrapper {
+  margin-top: 10px;
+  text-align: center;
+  color: #b5b5b5;
+  font-size: 13px;
+}
+
+.travelduck.onlineBookingBlock .secured-by-wrapper a {
+  text-decoration: underline;
+  color: #b5b5b5;
+}
+
+.travelduck.onlineBookingBlock .secured-by-wrapper a:hover {
+  color: #FF5426;
+}
+
