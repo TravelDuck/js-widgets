@@ -261,7 +261,8 @@
         return classes.join(" ");
       },
       format: format,
-      weekStart: changeOverDay
+      weekStart: changeOverDay,
+      attachToBody: true
     }).on('changeDate', function(e) {
       setStartCalendarDay(e.date);
 
@@ -285,7 +286,8 @@
         return classes.join(" ");
       },
       format: format,
-      weekStart: changeOverDay
+      weekStart: changeOverDay,
+      attachToBody: true
     }).on('changeDate', function(e) {
       setEndCalendarDay(e.date);
 
