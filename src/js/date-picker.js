@@ -4,9 +4,16 @@ var Datepicker = function(element, options){
   this.format = DPGlobal.parseFormat(options.format || this.element.data("date-format") || "mm/dd/yyyy");
   this.allowBeforeToday = options.allowBeforeToday || this.element.data('allow-before-today') || true;
 
+  this.placeRelatively = options.placeRelatively;
+
+  var parentElement = options.attachToBody ? 'body' : element.parentNode;
+
+  if(this.placeRelatively) {
+    parentElement.style.position = "relative";
+  }
 
   this.picker = $(DPGlobal.template)
-    .appendTo(options.attachToBody ? 'body' : element.parentNode)
+    .appendTo(parentElement)
     .on({
       mousedown: $.proxy(this.click, this),
       mouseover: $.proxy(this.mouseover, this)
@@ -160,8 +167,13 @@ Datepicker.prototype = {
     var inputWidth = this.component ? this.component.outerWidth() : this.element.outerWidth();
     var pickerWidth = this.picker.outerWidth();
 
-    var top = offset.top + this.height;
-    var left = offset.left;
+    var top = this.height;
+    var left = 0;
+
+    if(!this.placeRelatively) {
+      top += offset.top;
+      left += offset.left;
+    }
 
     if(this.placeRight) {
       left += inputWidth - pickerWidth;
@@ -459,6 +471,7 @@ $.fn.travelduckDatePicker.defaults = {
     return '';
   },
   attachToBody: false,
+  placeRelatively: true,
   allowBeforeToday: true
 };
 $.fn.travelduckDatePicker.Constructor = Datepicker;
