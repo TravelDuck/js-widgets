@@ -155,8 +155,8 @@
       "<div class='online-booking-block'>" +
         "<div class='datepicker-wrapper'>" +
           "<div class='inputs-wrapper'>" +
-            "<div class='col50'><input readonly class='start-date' placeholder='Start date' /></div>" +
-            "<div class='col50'><input readonly class='end-date' placeholder='End date' /></div>" +
+            "<div class='col50'><div><input readonly class='start-date' placeholder='Start date' /></div></div>" +
+            "<div class='col50'><div><input readonly class='end-date' placeholder='End date' /></div></div>" +
           "</div>" +
         "</div>" +
 
