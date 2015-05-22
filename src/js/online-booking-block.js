@@ -642,8 +642,10 @@
           hideLoadingBookingPrice();
           if(amount != null) {
             var numberOfNights = calendarDayRange.countNights();
+            var period = numberOfNights + (numberOfNights > 1 ? " Nights" : " Night");
+
             showBookingPrice(amount);
-            setBookingPeriodDisplay(numberOfNights + " Nights");
+            setBookingPeriodDisplay(period);
           } else {
             showContactOwnerBookingPrice();
           }
