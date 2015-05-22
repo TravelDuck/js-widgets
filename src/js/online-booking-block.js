@@ -25,18 +25,6 @@
     unavailable: []
   };
 
-  //var colouring = {
-  //  availableToAvailable: [],
-  //  availableToUnavailable: [],
-  //  availableToUnknown: [],
-  //  unavailableToAvailable: [],
-  //  unavailableToUnavailable: [],
-  //  unavailableToUnknown: [],
-  //  unknownToAvailable: [],
-  //  unknownToUnavailable: [],
-  //  unknownToUnknown: []
-  //};
-
 
   var startDatepickerColouring = [];
   var endDatepickerColouring = [];
@@ -211,8 +199,6 @@
     setBookingButtonFromPropertyBookingMode();
 
 
-    colourDatepickerAsError();
-
     bookingPriceDisplay = $(mainContainer).find(".price-display .price");
 
 
@@ -223,7 +209,8 @@
 
 
     $(bookBtn).click(function() {
-      submitBookingRequest(startCalendarDay, endCalendarDay);
+      var calendarDayRange = new CalendarDayRange(startCalendarDay, endCalendarDay);
+      submitBookingRequest(calendarDayRange);
     });
 
   }
@@ -320,12 +307,12 @@
 
 
   function setDatepickerError(error) {
-
+    colourDatepickerAsError();
   }
 
 
   function clearDatepickerError() {
-
+    colorDatepickerAsClear();
   }
 
 
@@ -439,6 +426,7 @@
 
 
       onChangeDateRange: function(dateRange) {
+        clearDatepickerError();
         loadPrice(dateRange);
       },
 
@@ -511,7 +499,8 @@
   /**
    * Set the start date of the booking.
    */
-  function setStartCalendarDay(startCalendarDay) {
+  function setStartCalendarDay(calendarDay) {
+    startCalendarDay = calendarDay;
     afterStartCalendarDayLimit = calculateAfterStartDateLimit(startCalendarDay, availability.available);
     beforeEndCalendarDayLimit = calculateBeforeEndDateLimit(startCalendarDay, availability.available);
   }
@@ -520,7 +509,8 @@
   /**
    * Set the end date of the booking.
    */
-  function setEndCalendarDay(endCalendarDay) {
+  function setEndCalendarDay(calendarDay) {
+    endCalendarDay = calendarDay;
     afterStartCalendarDayLimit = calculateAfterStartDateLimit(endCalendarDay, availability.available);
     beforeEndCalendarDayLimit = calculateBeforeEndDateLimit(endCalendarDay, availability.available);
   }
@@ -583,6 +573,14 @@
    */
   function submitBookingRequest(calendarDayRange) {
     setBookingButtonAsLoading();
+
+    
+    if(!calendarDayRange.getStartCalendarDay() || !calendarDayRange.getEndCalendarDay()) {
+      setDatepickerError("Select booking dates");
+      setBookingButtonFromPropertyBookingMode();
+      return;
+    }
+
 
     var request = new TravelDuck_Property_Booking_Request(property(), calendarDayRange);
     request.submit(function(response) {

@@ -25,3 +25,9 @@
    background-color: #fff;
    cursor: pointer;
  }
+
+.travelduck .has-error input,
+.travelduck .has-error input:focus {
+  border-color: #F64B2F;
+  box-shadow: none;
+}
