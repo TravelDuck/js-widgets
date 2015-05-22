@@ -8,6 +8,8 @@
   var endDateInput;
   var dateInputWrapper;
 
+  var infoDisplay;
+
   var bookBtn;
   var onlineBookingBlock;
 
@@ -152,9 +154,7 @@
 
         "<div class='price-wrapper'>" +
           "<div class='booking-display'>" +
-            "<div class='info-display'>" +
-
-            "</div>" +
+            "<div class='info-display'></div>" +
             "<div class='loading-price'>" +
               "<div class='text'>Doing the maths...</div>" +
               "<img src='https://travelduck.co/common/img/loading.gif'/>" +
@@ -166,14 +166,13 @@
             "</div>" +
             "<div class='no-price-display' style='text-align: center'>" +
               "<div class='title'>Request a price</div>" +
-              "<div class='text'>" +
-              "</div>" +
+              "<div class='text'></div>" +
             "</div>" +
           "</div>" +
         "</div>" +
 
         "<div class='button-wrapper'>" +
-          "<div class='btn btn-secondary' style='margin-top:10px'>Book Now</div>" +
+          "<div class='btn btn-secondary'>Book Now</div>" +
         "</div>" +
 
         "<div class='secured-by-wrapper'>" +
@@ -200,6 +199,16 @@
     // Set up the booking button.
     setBookingButtonAsLoading();
     setBookingButtonFromPropertyBookingMode();
+
+
+    infoDisplay = $(mainContainer).find(".info-display");
+
+    var p = property();
+    var changeOverDay = p.getChangeOverDay();
+
+    setInfo(
+      "<div>Change over <b>" + changeOverDay.name() + "</b></div>"
+    );
 
 
     bookingPriceDisplay = $(mainContainer).find(".price-display .price");
@@ -407,7 +416,40 @@
   }
 
 
+  /**
+   * Show the info display.
+   */
+  function showInfoDisplay() {
+    var animationTime = arguments[0] == null ? 300 : arguments[0];
+    $(infoDisplay).slideDown(animationTime);
+  }
 
+
+  /**
+   * Hide the info display.
+   */
+  function hideInfoDisplay() {
+    var animationTime = arguments[0] == null ? 300 : arguments[0];
+    $(infoDisplay).slideUp(animationTime);
+  }
+
+
+  /**
+   * Set the info to display.
+   *
+   * @param info
+   */
+  function setInfo(info) {
+    infoDisplay.html(info);
+  }
+
+
+  /**
+   * Clear the displayed info
+   */
+  function clearInfo() {
+    infoDisplay.html("");
+  }
 
 
 
@@ -629,6 +671,7 @@
     if(calendarDayRange) {
       showLoadingBookingPrice();
       hideBookingPrice();
+      hideInfoDisplay();
       hideContactOwnerBookingPrice();
 
       var numberOfAdults = 1;
@@ -658,6 +701,7 @@
     } else {
       hideBookingPrice();
       hideContactOwnerBookingPrice();
+      showInfoDisplay();
     }
   }
 
