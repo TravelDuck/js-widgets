@@ -13,6 +13,8 @@
 
   var bookingPriceDisplayWrapper;
   var bookingPriceDisplay;
+  var bookingPeriodDisplay;
+
   var bookingPriceLoadingWrapper;
   var bookingPriceContactOwnerWrapper;
 
@@ -160,6 +162,7 @@
             "<div class='price-display'>" +
               "<div class='text'>Book now from:</div>" +
               "<div class='price'></div>" +
+              "<div class='period'></div>" +
             "</div>" +
             "<div class='no-price-display' style='text-align: center'>" +
               "<div class='title'>Request a price</div>" +
@@ -200,6 +203,7 @@
 
 
     bookingPriceDisplay = $(mainContainer).find(".price-display .price");
+    bookingPeriodDisplay = $(mainContainer).find(".price-display .period");
 
 
     bookingPriceDisplayWrapper = $(mainContainer).find(".price-display");
@@ -346,6 +350,24 @@
   function hideBookingPrice() {
     var animationTime = arguments[0] == null ? 300 : arguments[0];
     $(bookingPriceDisplayWrapper).slideUp(animationTime);
+  }
+
+
+  /**
+   * Set the booking period display.
+   *
+   * @param bookingPeriod
+   */
+  function setBookingPeriodDisplay(bookingPeriod) {
+    $(bookingPeriodDisplay).html(bookingPeriod);
+  }
+
+
+  /**
+   * Clear the booking period display.
+   */
+  function clearBookingPeriodDisplay() {
+    $(bookingPeriodDisplay).html("");
   }
 
 
@@ -574,7 +596,7 @@
   function submitBookingRequest(calendarDayRange) {
     setBookingButtonAsLoading();
 
-    
+
     if(!calendarDayRange.getStartCalendarDay() || !calendarDayRange.getEndCalendarDay()) {
       setDatepickerError("Select booking dates");
       setBookingButtonFromPropertyBookingMode();
@@ -597,12 +619,10 @@
   }
 
 
-
-
-
-
   /**
    * Load the price of the current property for the current booking specification.
+   *
+   * @param {CalendarDayRange} calendarDayRange
    */
   function loadPrice(calendarDayRange) {
 
@@ -621,7 +641,9 @@
         calendarDayRange, numberOfAdults, numberOfChildren, numberOfInfants, numberOfPets, function(amount) {
           hideLoadingBookingPrice();
           if(amount != null) {
+            var numberOfNights = calendarDayRange.countNights();
             showBookingPrice(amount);
+            setBookingPeriodDisplay(numberOfNights + " Nights");
           } else {
             showContactOwnerBookingPrice();
           }
@@ -636,7 +658,6 @@
       hideContactOwnerBookingPrice();
     }
   }
-
 
 
 
