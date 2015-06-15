@@ -176,6 +176,7 @@
         "</div>" +
 
         "<div class='secured-by-wrapper'>" +
+          "<div class='cards'></div>" +
           "<i class='fa fa-lock'></i> Secured by <a target='_blank' href='https://travelduck.co'>TravelDuck</a>" +
         "</div>" +
 

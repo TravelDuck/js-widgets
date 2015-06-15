@@ -159,6 +159,17 @@
 }
 
 
+.travelduck.onlineBookingBlock .secured-by-wrapper .cards {
+  margin: 20px auto 10px auto;
+  background-image: url('https://puffincdn.com/credit-card-icons/img/cards-combined.png');
+  width: 136px;
+  height: 25px;
+}
+
+
+
+
+
 .travelduck.onlineBookingBlock .info-display {
   text-align: center;
   padding: 5px;
