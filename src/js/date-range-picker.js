@@ -7,10 +7,10 @@
   var selectedStartDay;
   var selectedEndDay;
 
-
-  const NONE = 0;
-  const SELECTSTART = 1;
-  const SELECTEND = 2;
+  // const not backward compatible - use var
+  var NONE = 0;
+  var SELECTSTART = 1;
+  var SELECTEND = 2;
 
 
   var methods = {

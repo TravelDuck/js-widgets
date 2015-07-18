@@ -132,6 +132,7 @@
     if(!this.propertyModel) {
       setProperty(new TravelDuck_Property($(displayElement).data("property-id")));
     }
+    console.log(this.propertyModel);
     return this.propertyModel;
   }
 
@@ -145,6 +146,12 @@
 
     $(mainContainer).append(
       "<div class='online-booking-block'>" +
+
+        "<div class='minimum-price-wrapper'>" +
+          "<span class='minimum-price'></span>" +
+          "<span class='price-period'></span>" +
+        "</div>" +
+
         "<div class='datepicker-wrapper'>" +
           "<div class='inputs-wrapper'>" +
             "<div class='col50'><div><input readonly class='start-date' placeholder='Start date' /></div></div>" +
