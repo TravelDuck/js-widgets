@@ -3,6 +3,9 @@
   var displayElement;
   var mainContainer;
 
+  var minimumPriceWrapper;
+  var minimumPriceAmountDisplay;
+  var minimumPricePeriodDisplay;
 
   var startDateInput;
   var endDateInput;
@@ -29,7 +32,6 @@
     unavailable: []
   };
 
-
   var startDatepickerColouring = [];
   var endDatepickerColouring = [];
 
@@ -55,17 +57,32 @@
       displayElement.append(mainContainer);
 
 
-      property().readFromApi(function(property) {
+      property().readFromApi(
+        /** @param {TravelDuck_Property} property */
+        function(property) {
+
 
         // Create interface
         initialise();
 
         // Setup interface
         hideBookingPrice(0);
+        hideMinimumPrice(0);
         hideLoadingBookingPrice(0);
         hideContactOwnerBookingPrice(0);
         disableDateSection();
 
+        // Minimum price display
+        if(property.hasMinimumPrice()) {
+          setMinimumPriceAmount(property.getMinimumPrice());
+          if(property.hasWeeklyTurnAround()) {
+            setMinimumPricePeriodAsWeekly();
+          }
+          if(property.hasNightlyTurnAround()) {
+            setMinimumPricePeriodAsNightly();
+          }
+          showMinimumPrice();
+        }
 
         loadColouredAvailability(function() {
           setupDatePickers();
@@ -132,7 +149,6 @@
     if(!this.propertyModel) {
       setProperty(new TravelDuck_Property($(displayElement).data("property-id")));
     }
-    console.log(this.propertyModel);
     return this.propertyModel;
   }
 
@@ -148,7 +164,8 @@
       "<div class='online-booking-block'>" +
 
         "<div class='minimum-price-wrapper'>" +
-          "<span class='minimum-price'></span>" +
+          "<span class='from'>From</span>&nbsp;" +
+          "<span class='minimum-price'></span>&nbsp;" +
           "<span class='price-period'></span>" +
         "</div>" +
 
@@ -170,10 +187,12 @@
               "<div class='text'>Book now from:</div>" +
               "<div class='price'></div>" +
               "<div class='period'></div>" +
+              "<div class='clear'>Clear</div>" +
             "</div>" +
             "<div class='no-price-display' style='text-align: center'>" +
-              "<div class='title'>Request a price</div>" +
+              "<div class='title'>No price available, request a price</div>" +
               "<div class='text'></div>" +
+              "<div class='clear'>Clear</div>" +
             "</div>" +
           "</div>" +
         "</div>" +
@@ -198,6 +217,9 @@
 
     bookBtn = $(mainContainer).find(".button-wrapper .btn");
 
+    minimumPriceWrapper = $(mainContainer).find(".minimum-price-wrapper")
+    minimumPriceAmountDisplay = $(mainContainer).find(".minimum-price-wrapper .minimum-price");
+    minimumPricePeriodDisplay = $(mainContainer).find(".minimum-price-wrapper .price-period");
 
     dateInputWrapper = $(mainContainer).find(".datepicker-wrapper .inputs-wrapper");
     startDateInput = $(mainContainer).find(".start-date");
@@ -233,6 +255,22 @@
       var calendarDayRange = new CalendarDayRange(startCalendarDay, endCalendarDay);
       submitBookingRequest(calendarDayRange);
     });
+
+
+    $(mainContainer).find(".price-display .clear").click(function() {
+      startDateInput.val("");
+      endDateInput.val("");
+      clearCalendarDays();
+      loadPrice(null);
+    });
+
+    $(mainContainer).find(".no-price-display .clear").click(function() {
+      startDateInput.val("");
+      endDateInput.val("");
+      clearCalendarDays();
+      loadPrice(null);
+    });
+
 
   }
 
@@ -308,6 +346,73 @@
 
 
 
+
+
+  /*
+   *
+   *   MINIMUM PRICE
+   *
+   */
+
+  /**
+   * Show minimum price.
+   */
+  function showMinimumPrice() {
+    var animationTime = arguments[0] == null ? 300 : arguments[0];
+    $(minimumPriceWrapper).slideDown(animationTime);
+  }
+
+
+  /**
+   * Hide minimum price.
+   */
+  function hideMinimumPrice() {
+    var animationTime = arguments[0] == null ? 300 : arguments[0];
+    $(minimumPriceWrapper).slideUp(animationTime);
+  }
+
+
+  /**
+   *
+   * @param amount
+   */
+  function setMinimumPriceAmount(amount) {
+
+    var symbol = amount.symbol();
+    var value = amount.getValue();
+
+    minimumPriceAmountDisplay.html(symbol + value);
+  }
+
+
+  /**
+   * Clear the Minimum Price Amount display
+   */
+  function clearMinimumPriceAmount() {
+    minimumPriceAmountDisplay.html("");
+  }
+
+
+  /**
+   * Set the pricing period as weekly
+   */
+  function setMinimumPricePeriodAsWeekly() {
+    minimumPricePeriodDisplay.html("per week");
+  }
+
+  /**
+   * Set the pricing period as nightly
+   */
+  function setMinimumPricePeriodAsNightly() {
+    minimumPricePeriodDisplay.html("per night");
+  }
+
+  /**
+   * Clear the pricing period.
+   */
+  function clearMinimumPricePeriod() {
+    minimumPricePeriodDisplay.html("");
+  }
 
 
 

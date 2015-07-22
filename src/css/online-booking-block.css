@@ -27,11 +27,35 @@
 
 
 
+.travelduck.onlineBookingBlock .booking-display {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+
 
 
 .travelduck.onlineBookingBlock {
 
 }
+
+
+.travelduck.onlineBookingBlock .minimum-price-wrapper {
+  padding-bottom: 15px;
+  text-align: center;
+}
+.travelduck.onlineBookingBlock .minimum-price-wrapper .from {
+  color: #949494;
+}
+.travelduck.onlineBookingBlock .minimum-price-wrapper .minimum-price {
+  font-size: 23px;
+}
+.travelduck.onlineBookingBlock .minimum-price-wrapper .price-period {
+  color: #949494;
+}
+
+
 
 
 
@@ -84,6 +108,13 @@
 }
 
 
+.travelduck.onlineBookingBlock .price-display,
+.travelduck.onlineBookingBlock .no-price-display {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+
 .travelduck.onlineBookingBlock .price-display {
   text-align: center;
 }
@@ -106,8 +137,22 @@
 
 .travelduck.onlineBookingBlock .contact-owner,
 .travelduck.onlineBookingBlock .price-display {
-  padding:20px 0;
+  padding: 0;
 }
+
+
+.travelduck.onlineBookingBlock .no-price-display .clear,
+.travelduck.onlineBookingBlock .price-display .clear {
+  margin-top: 20px;
+  color: #949494;
+}
+.travelduck.onlineBookingBlock .no-price-display .clear:hover,
+.travelduck.onlineBookingBlock .price-display .clear:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 
 
 
@@ -161,7 +206,7 @@
 
 .travelduck.onlineBookingBlock .secured-by-wrapper .cards {
   margin: 20px auto 10px auto;
-  background-image: url('https://puffincdn.com/credit-card-icons/img/cards-combined.png');
+  background-image: url("https://s3-eu-west-1.amazonaws.com/puffincdn.com/credit-card-icons/img/cards-combined.png");
   width: 136px;
   height: 25px;
 }
