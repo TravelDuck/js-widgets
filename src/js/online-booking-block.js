@@ -234,11 +234,21 @@
     infoDisplay = $(mainContainer).find(".info-display");
 
     var p = property();
-    var changeOverDay = p.getChangeOverDay();
 
-    setInfo(
-      "<div>Change over <b>" + changeOverDay.name() + "</b></div>"
-    );
+
+    if(p.hasWeeklyTurnAround()) {
+      var changeOverDay = p.getChangeOverDay();
+      setInfo(
+        "<div>Change over <b>" + changeOverDay.name() + "</b></div>"
+      );
+    } else {
+      var minimumNights = p.getMinimumNights();
+      setInfo(
+        "<div>Minimum of <b>" + minimumNights + " nights</b></div>"
+      );
+    }
+
+
 
 
     bookingPriceDisplay = $(mainContainer).find(".price-display .price");
