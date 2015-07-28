@@ -46,7 +46,7 @@
       refreshAvailability();
 
       //
-      // Auto refresh displayed availability.
+      // Auto refresh displayed availability every 30 seconds.
       //
       // If property availability if updated, calendar
       // colouring is updated on the displayed calendars.

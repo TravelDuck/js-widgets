@@ -2,6 +2,8 @@
 .travelduck select {
   color: #676767;
   font-size: 15px;
+  font-weight: 300;
+  font-family: inherit;
   height: 40px;
   border-width: 1px 1px 3px 1px;
   border-style: solid;
@@ -11,6 +13,8 @@
   box-shadow: none;
 
   background-color: #FBFBFB;
+
+  box-sizing: border-box;
 }
 
 
