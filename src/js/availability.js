@@ -98,7 +98,7 @@
 
     // Read from data if available.
     var dataWeekChangeOverDay = $(displayElement).data("week-change-over-day");
-    if(dataWeekChangeOverDay) {
+    if(dataWeekChangeOverDay !== null) {
       changeOverDay = new DayOfWeek(dataWeekChangeOverDay)
     }
 
