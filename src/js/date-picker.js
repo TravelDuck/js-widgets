@@ -451,9 +451,9 @@ Datepicker.prototype = {
 
 
   mouseout: function(e) {
-    this.element.trigger({
-      type: 'exitDate'
-    });
+    //this.element.trigger({
+    //  type: 'exitDate'
+    //});
   },
 
 
