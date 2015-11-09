@@ -239,7 +239,23 @@
   table-layout: auto !important;
 }
 
+.travelduck.onlineBookingBlock .datepicker-days table th {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
 .travelduck.onlineBookingBlock .datepicker-days table td,
 .travelduck.onlineBookingBlock .datepicker-days table th {
-  padding: 0 !important;
+  vertical-align: middle !important;
+}
+
+
+.travelduck.onlineBookingBlock .travelduckDatePicker {
+  width: 226px;
+}
+
+@media(max-width:767px){
+  .travelduck.onlineBookingBlock .travelduckDatePicker {
+    width: 180px;
+  }
 }
