@@ -230,3 +230,16 @@
 .travelduck.onlineBookingBlock .info-display b {
   font-weight: 400;
 }
+
+
+
+
+
+.travelduck.onlineBookingBlock .datepicker-days table {
+  table-layout: auto !important;
+}
+
+.travelduck.onlineBookingBlock .datepicker-days table td,
+.travelduck.onlineBookingBlock .datepicker-days table th {
+  padding: 0 !important;
+}
