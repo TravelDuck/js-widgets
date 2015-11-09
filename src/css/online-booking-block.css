@@ -197,6 +197,7 @@
 .travelduck.onlineBookingBlock .secured-by-wrapper a {
   text-decoration: underline;
   color: #b5b5b5;
+  border: 0;
 }
 
 .travelduck.onlineBookingBlock .secured-by-wrapper a:hover {

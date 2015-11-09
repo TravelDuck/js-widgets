@@ -9,6 +9,7 @@
   border-spacing: 0;
   float: left;
   margin: 15px;
+  background-color: #fff;
 }
 
 .travelduck.availability .month-name {
@@ -25,4 +26,6 @@
   width: 36px;
   height: 36px;
   text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
